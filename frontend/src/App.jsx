@@ -7,21 +7,22 @@ import { Schedule } from './components/Schedule'
 import { About } from './components/About'
 import { Gallery } from './components/Gallery'
 import { Events } from './components/Events'
-import { FAQ } from './components/FAQ'
+import { FAQSection} from './components/FAQ'
 import { Contact } from './components/Contact'
+import '@fontsource/bangers';
 
 function App() {
 //use tailwind maybe? 
   return (
     <>
-      <div>
-        <h1 className='text-xl font-bold text-red-300'>Catalysis3.0</h1>
+      <div className='bg-[#FFC247] '>
+        <h1 className='text-5xl font-bold text-red-500 font-comic'>Catalysis3.0</h1>
         <Hero/>
         <About/>
         <Events/>
         <Schedule/>
         <Gallery/>
-        <FAQ/>
+        <FAQSection/>
         <Contact/>
       </div>
     </>
