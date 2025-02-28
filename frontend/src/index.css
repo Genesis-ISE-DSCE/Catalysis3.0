@@ -1,2 +1,15 @@
 @import "tailwindcss";
 
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+
+@layer components {
+  .shadow-comic {
+    box-shadow: 4px 4px 0px 0px #000000;
+  }
+
+  .font-comic {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 2px;
+  }
+}
