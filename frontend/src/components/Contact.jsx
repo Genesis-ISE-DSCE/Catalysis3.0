@@ -5,11 +5,11 @@ import { motion } from 'framer-motion';
 const Contact = () => {
 
   return (
-    <section className="py-20 min-h-screen overflow-hidden w-screen relative " id="contact">
-      {/* Background Effects */}
-      <div className=" absolute inset-0 bg-[#FFC247]">
-        <div className="absolute inset-0 opacity-10 action-lines"></div>
-        <div className="absolute inset-0 opacity-5 halftone "></div>
+    <section className="py-20 min-h-screen overflow-hidden w-screen relative" id="contact">
+    {/* Background Effects */}
+    <div className="absolute inset-0 bg-[#FFC247]">
+      <div className="absolute inset-0 opacity-10 action-lines"></div>
+      <div className="absolute inset-0 opacity-5 halftone"></div>
       </div>
 
       <div className="container mx-auto px-0 relative">
