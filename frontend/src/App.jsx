@@ -8,21 +8,24 @@ import { About } from './components/About'
 import { Gallery } from './components/Gallery'
 import { Events } from './components/Events'
 import { FAQ } from './components/FAQ'
-import { Contact } from './components/Contact'
+import {Contact} from "./components/Contact"
+
 
 function App() {
 //use tailwind maybe? 
   return (
     <>
       <div>
-        <h1 className='text-xl font-bold text-red-300'>Catalysis3.0</h1>
+        {/* <h1 className='text-xl font-bold text-red-300'>Catalysis3.0</h1> */}
         <Hero/>
         <About/>
         <Events/>
         <Schedule/>
         <Gallery/>
         <FAQ/>
+      
         <Contact/>
+      
       </div>
     </>
   )
