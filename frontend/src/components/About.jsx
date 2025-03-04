@@ -33,11 +33,11 @@ export const About = () => {
   ];
 
   return (
-    <section className="py-16 relative overflow-hidden" id="about">
+    <div className="py-16 h-auto relative overflow-hidden" id="about">
       <img
       src="/images/books.svg"
       alt="Books"
-      className="absolute left-0 bottom-0 w-32 md:w-42"
+      className="absolute left-0 bottom-0 w-32  md:w-44 transform transition-transform duration-200 hover:scale-110"
     />
       <div className="container h-auto mx-auto px-4 relative z-50">
         <motion.div
@@ -90,8 +90,8 @@ export const About = () => {
       <img
       src="/images/pc.svg"
       alt="PC"
-      className="absolute right-0 bottom-0 overflow-hidden w-16 md:w-28"
+      className="absolute right-0 bottom-0 w-16 md:w-30 transform transition-transform duration-200 hover:scale-110"
     />
-    </section>
+    </div>
   );
 };
