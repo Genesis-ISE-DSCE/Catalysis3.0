@@ -16,7 +16,7 @@ function App() {
     <Router>
       <div className='bg-[#FFC247]'>
         <Routes>
-          <Route path="/" index element={
+          <Route path="/" element={
             <>
               <Hero />
               <About />
