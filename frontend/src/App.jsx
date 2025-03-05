@@ -8,14 +8,15 @@ import { Events } from './components/Events'
 import { FAQSection } from './components/FAQ'
 import { Contact } from './components/Contact'
 import '@fontsource/bangers';
-
+import { Route,BrowserRouter as Router,Routes } from 'react-router-dom'
+import {Register  } from './components/Register'
 
 function App() {
   return (
     <Router>
       <div className='bg-[#FFC247]'>
         <Routes>
-          <Route path="/" element={
+          <Route path="/" index element={
             <>
               <Hero />
               <About />
