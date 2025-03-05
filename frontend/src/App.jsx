@@ -14,7 +14,6 @@ import '@fontsource/bangers';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
-//use tailwind maybe? 
   return (
     <Router>
       <div className='bg-[#FFC247]'>
@@ -37,4 +36,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

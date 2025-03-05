@@ -9,18 +9,18 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
-  "dependencies": {
-    "@fontsource/bangers": "^5.1.1",
-    "@fontsource/staatliches": "^5.2.5",
-    "@tailwindcss/vite": "^4.0.9",
-    "framer-motion": "^12.4.7",
-    "lucide-react": "^0.476.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-intersection-observer": "^9.15.1",
-    "react-router-dom": "^7.2.0",
-    "typeface-comic-neue": "^1.1.13"
-  },
+"dependencies": {
+  "@fontsource/bangers": "^5.1.1",
+  "@fontsource/staatliches": "^5.2.5",
+  "@tailwindcss/vite": "^4.0.9",
+  "framer-motion": "^12.4.7",
+  "lucide-react": "^0.476.0",
+  "react": "^19.0.0",
+  "react-dom": "^19.0.0",
+  "react-intersection-observer": "^9.15.1",
+  "react-router-dom": "^7.2.0",
+  "typeface-comic-neue": "^1.1.13"
+},
   "devDependencies": {
     "@eslint/js": "^9.21.0",
     "@types/react": "^19.0.10",

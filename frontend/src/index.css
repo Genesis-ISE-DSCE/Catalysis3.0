@@ -1,8 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap");
 @import "tailwindcss";
 
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
-
 
 
 @layer components {
@@ -11,13 +12,13 @@
   }
 
   .font-comic {
-    font-family: 'Bangers', cursive;
+    font-family: "Bangers", cursive;
     letter-spacing: 2px;
   }
 
   .font-comic-neue {
-    font-family: 'Comic Neue', cursive;
-    font-weight: 400; 
+    font-family: "Comic Neue", cursive;
+    font-weight: 400;
   }
 
   .font-stat{
