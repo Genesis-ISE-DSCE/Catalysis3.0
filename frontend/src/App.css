@@ -1,4 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
 @import "tailwindcss";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  /* max-width: 1280px; */
+  /* margin: 0 auto; */
+  /* padding: 2rem; */
+  text-align: center;
+}
 
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
