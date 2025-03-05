@@ -12,10 +12,9 @@ import { Contact } from "./components/Contact";
 import "@fontsource/bangers";
 
 function App() {
-  //use tailwind maybe?
   return (
     <>
-      <div>
+      <div className="bg-[#FFC247]">
         <h1 className="text-5xl font-bold text-red-500 font-comic">
           Catalysis3.0
         </h1>
