@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+
 
 @layer components {
   .shadow-comic {
@@ -15,5 +18,10 @@
   .font-comic-neue {
     font-family: 'Comic Neue', cursive;
     font-weight: 400; 
+  }
+
+  .font-stat{
+    font-family: 'Staatliches', cursive;
+
   }
 }
