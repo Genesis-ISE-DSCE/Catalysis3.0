@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap");
 @import "tailwindcss";
 
 @layer components {
@@ -9,5 +10,10 @@
   .font-comic {
     font-family: "Bangers", cursive;
     letter-spacing: 2px;
+  }
+
+  .font-comic-neue {
+    font-family: "Comic Neue", cursive;
+    font-weight: 400;
   }
 }
