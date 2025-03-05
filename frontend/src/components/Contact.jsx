@@ -33,7 +33,7 @@ const Contact = () => {
             <img 
               src="Group 2962 (1).png" 
               alt="Colorful 3D illustration" 
-              className="w-full max-w-md h-auto object-contain transform -translate-x-4  md:scale-[2]"
+              className="w-full max-w-md h-auto object-contain transform -translate-x-4 md:scale-[2]"
             />
           </div>
 
@@ -46,21 +46,21 @@ const Contact = () => {
               <input
                 type="text"
                 placeholder="Your Name"
-                className="w-full px-4 py-3 rounded-xl bg-white/10 border-2 border-[#FFE0E0] text-white placeholder-white/50 focus:outline-none focus:border-[#ff1f53] shadow-comic transform group-hover:-rotate-1 transition-transform shadow-[4px_4px_0_#000]"
+                className="w-full px-4 py-3 rounded-xl bg-white/10 border-2 border-[#FFE0E0] text-[#161616] font-bold placeholder-[#161616] placeholder:font-bold focus:outline-none focus:border-[#ff1f53] shadow-comic transform group-hover:-rotate-1 transition-transform shadow-[4px_4px_0_#000]"
               />
             </div>
             <div className="relative group">
               <input
                 type="email"
                 placeholder="Your Email"
-                className="w-full px-4 py-3 rounded-xl bg-white/10 border-2 border-[#FFE0E0] text-white placeholder-white/50 focus:outline-none focus:border-[#ff1f53] shadow-comic transform group-hover:-rotate-1 transition-transform shadow-[4px_4px_0_#000]"
+                className="w-full px-4 py-3 rounded-xl bg-white/10 border-2 border-[#FFE0E0] text-[#161616] font-bold placeholder-[#161616] placeholder:font-bold focus:outline-none focus:border-[#ff1f53] shadow-comic transform group-hover:-rotate-1 transition-transform shadow-[4px_4px_0_#000]"
               />
             </div>
             <div className="relative group">
               <textarea
                 placeholder="Your Message"
                 rows={4}
-                className="w-full px-4 py-3 rounded-xl bg-white/10 border-2 border-[#FFE0E0] text-white placeholder-white/50 focus:outline-none focus:border-[#ff1f53] shadow-comic transform group-hover:-rotate-1 transition-transform shadow-[4px_4px_0_#000]"
+                className="w-full px-4 py-3 rounded-xl bg-white/10 border-2 border-[#FFE0E0] text-[#161616] font-bold placeholder-[#161616] placeholder:font-bold focus:outline-none focus:border-[#ff1f53] shadow-comic transform group-hover:-rotate-1 transition-transform shadow-[4px_4px_0_#000]"
               ></textarea>
             </div>
             <motion.button
