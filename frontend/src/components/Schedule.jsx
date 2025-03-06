@@ -153,7 +153,7 @@ export const Schedule = () => {
                 </td>
                 <td className="py-4 px-2 md:px-4 text-center">
                   <span
-                    className={`px-4 py-1 rounded-full ${getBgColor(
+                    className={`px-16 py-1 rounded-full ${getBgColor(
                       item.color
                     )} ${getTextColor(
                       item.color
