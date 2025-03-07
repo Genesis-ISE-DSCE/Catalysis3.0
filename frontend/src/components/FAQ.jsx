@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircleQuestion, ChevronDown, ChevronUp, Zap } from "lucide-react";
+import {
+  MessageCircleQuestion,
+  ChevronDown,
+  ChevronUp,
+  Zap,
+} from "lucide-react";
 
 export const FAQSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -8,7 +13,8 @@ export const FAQSection = () => {
   const faqs = [
     {
       question: "WHEN? WHERE? HOW?",
-      answer: "March 7th & 8th, 2025! Join us at ISE Department for this legendary showdown! 🚀",
+      answer:
+        "March 7th & 8th, 2025! Join us at ISE Department for this legendary showdown! 🚀",
     },
     {
       question: "KA-CHING! What's the registration fee and how do I register?",
@@ -17,15 +23,18 @@ export const FAQSection = () => {
     },
     {
       question: "BOOM! Can non-IT students join the action?",
-      answer: "Absolutely! The technical fest welcomes tech enthusiasts from all branches to unleash their skills! 🎉",
+      answer:
+        "Absolutely! The technical fest welcomes tech enthusiasts from all branches to unleash their skills! 🎉",
     },
     {
       question: "WHAT'S ON THE MENU? (Events & Competitions)",
-      answer: "Brace yourself for epic hackathons, coding duels, Tech Treasure Hunts, quizzes, and more! 🤖💻",
+      answer:
+        "Brace yourself for epic hackathons, coding duels, Tech Treasure Hunts, quizzes, and more! 🤖💻",
     },
     {
       question: "ZAP! Prizes for the brave?",
-      answer: "You bet! Winners walk away with prizes, glory, and ultimate bragging rights! 🏆",
+      answer:
+        "You bet! Winners walk away with prizes, glory, and ultimate bragging rights! 🏆",
     },
   ];
 
@@ -64,7 +73,9 @@ export const FAQSection = () => {
             <span className="inline-block bg-[#ff1f53] text-white px-6 py-2 rounded-full text-lg mb-4 font-bold">
               Got Questions?
             </span>
-            <h2 className="text-7xl font-comic text-[#421AE8]">Frequently Asked Questions</h2>
+            <h2 className="text-7xl font-comic text-[#421AE8]">
+              Frequently Asked Questions
+            </h2>
           </motion.div>
 
           {faqs.map((faq, index) => (
@@ -80,10 +91,14 @@ export const FAQSection = () => {
               <div className="relative bg-white rounded-xl border-4 border-black overflow-hidden shadow-comic">
                 <button
                   className="w-full p-6 text-left flex items-center gap-4 bg-white"
-                  onClick={() => setActiveIndex(activeIndex === index ? null : index)}
+                  onClick={() =>
+                    setActiveIndex(activeIndex === index ? null : index)
+                  }
                 >
                   <MessageCircleQuestion className="w-8 h-8 text-[#ff1f53] flex-shrink-0" />
-                  <span className="font-comic text-xl text-[#00237a] flex-grow">{faq.question}</span>
+                  <span className="font-comic text-xl text-[#00237a] flex-grow">
+                    {faq.question}
+                  </span>
                   {activeIndex === index ? (
                     <ChevronUp className="w-6 h-6 text-[#ff1f53]" />
                   ) : (
@@ -134,7 +149,11 @@ export const FAQSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 0.2 }}
         >
-          <img src="/images/Group 2960.svg" alt="FAQ Illustration Background" className="w-full h-full object-cover" />
+          <img
+            src="/images/Group 2960.svg"
+            alt="FAQ Illustration Background"
+            className="w-full h-full object-cover"
+          />
         </motion.div>
       </div>
     </div>

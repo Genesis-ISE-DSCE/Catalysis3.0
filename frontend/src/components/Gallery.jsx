@@ -14,7 +14,6 @@ const Gallery = () => {
 
   return (
     <div className="bg-[#FFC247] min-h-screen flex flex-col py-10 px-4 sm:px-8">
-
       <h1
         className="text-6xl text-[#7B5CF7] text-center mb-12 font-comic tracking-wide"
         data-aos="zoom-in"
