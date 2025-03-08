@@ -1,4 +1,3 @@
-
 import './App.css'
 import { Hero } from './components/Hero'
 import { Schedule } from './components/Schedule'
@@ -10,6 +9,7 @@ import { Contact } from './components/Contact'
 import '@fontsource/bangers';
 import { Route,BrowserRouter as Router,Routes } from 'react-router-dom'
 import {Register  } from './components/Register'
+import Navbar from './components/navbar'
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={
             <>
+              <Navbar />
               <Hero />
               <About />
               <Events />
@@ -27,7 +28,12 @@ function App() {
               <Contact />
             </>
           } />
-          <Route path="/register" element={<Register />} />
+          <Route path="/register" element={
+            <>
+              <Navbar />
+              <Register />
+            </>
+          } />
         </Routes>
       </div>
     </Router>
