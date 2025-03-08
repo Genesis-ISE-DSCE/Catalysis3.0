@@ -32,8 +32,8 @@ export const Hero = () => {
   }, []);
 
   return (
-    <div className="h-screen flex items-center justify-center overflow-hidden py-24 px-0 font-comic">
-      <div className=" z-10 container mx-auto ">
+    <div className="h-screen flex items-center justify-center overflow-hidden py-24 px-0 font-comic ">
+      <div className=" z-10 container mx-auto mt-12">
         <div className="text-center">
           <motion.div
             initial={{ y: -50, opacity: 0 }}
@@ -73,7 +73,7 @@ export const Hero = () => {
             <img
               src={Game}
               alt="Game"
-              className="drop-shadow-lg w-32 h-30 sm:w-44 sm:h-44 xl:w-86 xl:h-86 md:w-54 md:h-50 
+              className="drop-shadow-lg w-32 h-30 sm:w-44 sm:h-44 xl:w-86 xl:h-86 md:w-54 md:h-50 mt-12
                transform transition-transform duration-500 hover:scale-110 hover:-rotate-3"
             />
           </motion.div>
