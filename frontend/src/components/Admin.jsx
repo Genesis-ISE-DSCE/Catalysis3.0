@@ -13,8 +13,12 @@ const initialEvents = {
 };
 
 function CatalysisTitle() {
+  const navigate = useNavigate();
   return (
-    <h1 className="text-[#ff1f53] text-2xl md:text-3xl font-stat font-bold relative tracking-wide">
+    <h1 
+      onClick={() => navigate('/')} 
+      className="text-[#ff1f53] text-2xl md:text-3xl font-stat font-bold relative tracking-wide cursor-pointer"
+    >
       {Array.from("CATALYSIS ADMIN").map((letter, index) => (
         <span key={index} className="relative inline-block mx-0.5">
           <span className="absolute top-[2px] right-[2px] text-black">
