@@ -15,35 +15,11 @@ import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { Login } from './components/Login';
 import { useState, useEffect } from 'react';
 
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 100);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-    return <div className="min-h-screen bg-amber-50 flex items-center justify-center">
-      Loading...
-    </div>;
-  }
-
-  if (!isAuthenticated) {
-    return <Navigate to="/login" />;
-  }
-
-  return children;
-};
-import { Login } from './components/Login';
-import { AuthProvider, useAuth } from './contexts/AuthContext';
-import { useState, useEffect } from 'react';
-
-// Protected Route Component
-const ProtectedRoute = ({ children }) => {
+const AdminRoute = () => {
   const { isAuthenticated } = useAuth();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Short timeout to ensure stable loading state
     const timer = setTimeout(() => setIsLoading(false), 100);
     return () => clearTimeout(timer);
   }, []);
@@ -58,51 +34,44 @@ const ProtectedRoute = ({ children }) => {
     return <Navigate to="/login" />;
   }
 
-  return children;
+  return <Admin />;
 };
 
 function App() {
-  const { login } = useAuth();
-  
   return (
-    <Router>
-      <div className='bg-[#FFC247]'>
-        <Routes>
-          <Route path="/" element={
-            <>
-              <Navbar />
-              <Hero />
-              <About />
-              <Events />
-              <Schedule />
-              <Gallery />
-              <FAQSection />
-              <Contact />
-            </>
-          } />
-          <Route path="/register" element={
-            <>
-              <Navbar />
-              <Register />
-            </>
-          } />
-          <Route path="/login" element={<Login onLogin={login} />} />
-          <Route path="/admin" element={
-            <ProtectedRoute>
-              <Admin />
-            </ProtectedRoute>
-          } />
-        </Routes>
-      </div>
-    </Router>
+    <div className='bg-[#FFC247]'>
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Navbar />
+            <Hero />
+            <About />
+            <Events />
+            <Schedule />
+            <Gallery />
+            <FAQSection />
+            <Contact />
+          </>
+        } />
+        <Route path="/register" element={
+          <>
+            <Navbar />
+            <Register />
+          </>
+        } />
+        <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<AdminRoute />} />
+      </Routes>
+    </div>
   );
 }
 
-// Wrap the exported component with AuthProvider
-export default function AppWithAuth() {
+export default function AppWrapper() {
   return (
-    <AuthProvider>
-      <App />
-    </AuthProvider>
+    <Router>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </Router>
   );
 }

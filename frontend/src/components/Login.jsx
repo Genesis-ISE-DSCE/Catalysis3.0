@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 import api from '../utils/axios';
 
-export function Login({ onLogin }) {
+export function Login() {
   const [credentials, setCredentials] = useState({ username: '', password: '' });
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,7 +24,7 @@ export function Login({ onLogin }) {
         throw new Error('No token received');
       }
       
-      onLogin(token);
+      login(token);
       navigate('/admin');
     } catch (err) {
       console.error('Login error:', err.response?.data || err.message);
