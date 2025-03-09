@@ -17,7 +17,7 @@ import "aos/dist/aos.css";
 const EventCard = ({ title, description, date, time, icon, delay }) => {
   return (
     <div
-      className="relative border-4 border-black bg-white p-6 mb-8 rounded-2xl border-r-8 border-b-8"
+      className="relative border-4 border-black bg-white p-6 mb-8 rounded-2xl border-r-8 border-b-8" id="events"
       data-aos="fade-up"
       data-aos-delay={delay}
     >
