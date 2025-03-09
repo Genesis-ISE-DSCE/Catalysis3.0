@@ -40,7 +40,7 @@ export function Admin() {
   useEffect(() => {
     const fetchParticipants = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/events`);
+        const response = await api.get('/events');
         console.log('API Response:', response.data); 
         
         // Group participants by event

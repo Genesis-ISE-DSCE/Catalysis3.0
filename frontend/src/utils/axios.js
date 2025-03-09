@@ -16,7 +16,14 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
+<<<<<<< HEAD
       localStorage.removeItem('token');
+=======
+      // Clear auth state
+      localStorage.removeItem('token');
+      
+      // Only redirect if we're not already on the login page
+>>>>>>> df294e6 (feat: add token based auth)
       if (!window.location.pathname.includes('/login')) {
         window.location.href = '/login';
       }
