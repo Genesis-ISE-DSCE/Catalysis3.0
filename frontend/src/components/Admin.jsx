@@ -5,11 +5,12 @@ import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
 const initialEvents = {
-  'DSASmackDown': [],
+  'DSA SmackDown': [],
   'UI/UXDesign': [],
   'Technoseek': [],
-  'CodeRelay': [],
-  'TypeMaster': []
+  'Code Relay': [],
+  'TypeMaster': [],
+  'Valorant': []
 };
 
 function CatalysisTitle() {
@@ -34,7 +35,7 @@ function CatalysisTitle() {
 export function Admin() {
   const { logout } = useAuth();
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState('DSASmackDown');
+  const [activeTab, setActiveTab] = useState('DSA SmackDown');
   const [searchTerm, setSearchTerm] = useState('');
   const [participants, setParticipants] = useState(initialEvents);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
