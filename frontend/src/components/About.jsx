@@ -3,12 +3,10 @@ import { useInView } from 'react-intersection-observer';
 import { Zap, Star, Users } from 'lucide-react';
 import "typeface-comic-neue";
 
-
-
 export const About = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.2, 
   });
 
   const features = [
@@ -16,34 +14,34 @@ export const About = () => {
       icon: <Zap className="w-8 h-8 text-[#00237A]" />,
       title: "Innovation",
       description: "Pushing boundaries with cutting-edge tech challenges",
-      bgColor: "bg-[#FF1F53]"
+      bgColor: "bg-[#FF1F53]",
     },
     {
       icon: <Star className="w-8 h-8 text-[#00237A]" />,
       title: "Excellence",
       description: "Showcasing the best technical talent",
-      bgColor: "bg-[#7B5CF7]"
+      bgColor: "bg-[#7B5CF7]",
     },
     {
       icon: <Users className="w-8 h-8 text-[#00237A]" />,
       title: "Community",
       description: "Building connections in tech community",
-      bgColor: "bg-[#00D37C]"
-    }
+      bgColor: "bg-[#00D37C]",
+    },
   ];
 
   return (
-    <div className="py-16 h-auto relative overflow-hidden" id="about">
+    <div ref={ref} className="min-h-screen py-16 h-auto relative overflow-hidden" id="about">
       <img
-      src="/images/books.svg"
-      alt="Books"
-      className="absolute left-0 bottom-0 w-32  md:w-44 transform transition-transform duration-200 hover:scale-110"
-    />
+        src="/images/books.svg"
+        alt="Books"
+        className="absolute left-0 bottom-2 w-32 md:w-44 transform transition-transform duration-200 hover:scale-110"
+      />
+
       <div className="container h-auto mx-auto px-4 relative z-50">
         <motion.div
-          ref={ref}
           initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto"
         >
@@ -66,7 +64,7 @@ export const About = () => {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: -50 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
+                animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 className="relative group flex flex-col"
               >
@@ -87,11 +85,12 @@ export const About = () => {
           </div>
         </motion.div>
       </div>
+
       <img
-      src="/images/pc.svg"
-      alt="PC"
-      className="absolute right-0 bottom-0 w-16 md:w-30 transform transition-transform duration-200 hover:scale-110"
-    />
+        src="/images/pc.svg"
+        alt="PC"
+        className="absolute right-0 bottom-0 w-16 md:w-30 transform transition-transform duration-200 hover:scale-110"
+      />
     </div>
   );
 };

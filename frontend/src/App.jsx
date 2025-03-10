@@ -10,7 +10,7 @@ import { Admin } from './components/Admin'
 import '@fontsource/bangers';
 import { Route,BrowserRouter as Router,Routes, Navigate } from 'react-router-dom'
 import { Register } from './components/Register'
-import Navbar from './components/navbar'
+import Navbar from './components/Navbar'
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { Login } from './components/Login';
 import { useState, useEffect } from 'react';
