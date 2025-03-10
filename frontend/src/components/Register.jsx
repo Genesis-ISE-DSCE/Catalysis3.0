@@ -1,5 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +13,10 @@ const Register = () => {
     sem: "",
     branch: "",
     usn: "",
+    teamMembers: [],
   });
+
+  const [teamSize, setTeamSize] = useState(0);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,12 +26,22 @@ const Register = () => {
     }));
   };
 
+  const handleTeamMemberChange = (index, e) => {
+    const { name, value } = e.target;
+    const updatedTeamMembers = [...formData.teamMembers];
+    updatedTeamMembers[index] = {
+      ...updatedTeamMembers[index],
+      [name]: value,
+    };
+    setFormData((prevData) => ({
+      ...prevData,
+      teamMembers: updatedTeamMembers,
+    }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    alert(
-      `✅ Registration Successful!\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nEvent: ${formData.event}\nUSN: ${formData.usn}\nSemester: ${formData.sem}\nBranch: ${formData.branch}`
-    );
+    toast.success("Thanks for registration :)");
 
     setFormData({
       name: "",
@@ -35,18 +51,35 @@ const Register = () => {
       sem: "",
       branch: "",
       usn: "",
+      teamMembers: [],
     });
+    setTeamSize(0);
   };
+
+  useEffect(() => {
+    if (["Code Relay", "Technoseek", "Valorant"].includes(formData.event)) {
+      setTeamSize(2);
+    } else {
+      setTeamSize(0);
+    }
+  }, [formData.event]);
+
+  useEffect(() => {
+    setFormData((prevData) => ({
+      ...prevData,
+      teamMembers: Array(Math.max(0, teamSize - 1)).fill({ name: "", usn: "", phone: "" }),
+    }));
+  }, [teamSize]);
 
   return (
     <motion.div
-      className="flex justify-center items-center min-h-screen p-4 mt-20 overflow-hidden"
+      className="flex justify-center items-center min-h-screen p-8 overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
     >
       <motion.form
-        className="bg-white p-4 md:p-6 rounded-2xl shadow-xl w-full max-w-lg border-4 border-[#FF1F53]"
+        className="bg-white p-4 md:p-6 mt-20 rounded-2xl shadow-xl w-full max-w-4xl border-4 border-[#FF1F53]"
         initial={{ scale: 0.5, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1.2 }}
@@ -132,14 +165,12 @@ const Register = () => {
             <option value="" disabled>
               Select Event
             </option>
-            <option value="Typemaster">Typemaster</option>
-            <option value="TechnicalQuiz"> Quiz (Team Event)</option>
-            <option value="DSASmackDown">DSA SmackDown</option>
+            <option value="Code Relay">Coding Relay (Team Event)</option>
+            <option value="DSA SmackDown">DSA Smack-Down</option>
+            <option value="Technoseek">Technoseek (Team Event)</option>
+            <option value="TypeMaster">TypeMaster</option>
             <option value="UI/UX Design">UI/UX Design</option>
-            <option value="Valorant"> Valorant (Team Event)</option>
-            <option value="CodingRelayRace">
-              Coding Relay Race (Team Event)
-            </option>
+            <option value="Valorant">Valorant (Team Event)</option>
           </select>
         </div>
 
@@ -160,7 +191,7 @@ const Register = () => {
               </option>
               {[...Array(8)].map((_, i) => (
                 <option key={i} value={i + 1}>
-                  Semester {i + 1}
+                  {i + 1}
                 </option>
               ))}
             </select>
@@ -180,23 +211,30 @@ const Register = () => {
                 Select Branch
               </option>
               {[
-                "AI and ML",
-                "Aeronautical",
-                "Automobile",
+                "Aeronautical Engineering",
+                "Automobile Engineering",
                 "Biotechnology",
-                "Computer Science",
-                "Computer Science and Data Science",
-                "Cyber Security",
-                "Computer Science and Business System",
-                "Computer Science and Design",
-                "Chemical",
+                "Chemical Engineering",
                 "Civil Engineering",
-                "Electronics and Communication",
-                "Electrical and Electronics",
-                "Electronics and Instrumentation",
-                "Electronics and Telecommunication",
-                "Information Science",
-                "Mechanical",
+                "Electrical & Electronics Engineering",
+                "Electronics & Communication Engineering",
+                "Electronics & Instrumentation Engineering",
+                "Mechanical Engineering",
+                "Medical Electronics Engineering",
+                "Electronics & Telecommunication Engineering",
+                "Artificial Intelligence & Machine Learning",
+                "Information Science & Engineering",
+                "Master of Business Administration",
+                "Master of Computer Applications",
+                "Mathematics Department",
+                "Physics Department",
+                "Chemistry Department",
+                "Computer Science and Engineering",
+                "Computer Science and Business Systems",
+                "Computer Science Engineering (Cyber Security)",
+                "Computer Science Engineering (Data Science)",
+                "Computer Science and Design",
+                "Others",
               ].map((branch) => (
                 <option key={branch} value={branch}>
                   {branch}
@@ -205,7 +243,6 @@ const Register = () => {
             </select>
           </div>
         </div>
-
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -215,9 +252,10 @@ const Register = () => {
         >
           Register
         </motion.button>
+        <ToastContainer position="top-center" />
       </motion.form>
     </motion.div>
   );
 };
 
-export {Register};
+export { Register };
