@@ -38,3 +38,12 @@ exports.registerForEvent = async (req, res) => {
     res.status(500).json({ error: 'Failed to register for the event', details: error.message });
   }
 };
+
+exports.getAllRegistrations = async (req, res) => {
+  try {
+    const registrations = await Registration.find({});
+    res.status(200).json(registrations);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch registrations', details: error.message });
+  }
+};

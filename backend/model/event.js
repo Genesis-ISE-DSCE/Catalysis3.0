@@ -2,13 +2,11 @@ const mongoos = require("mongoose")
 
 // events available
 const events = [
-    "TechnicalQuiz",
     "DSASmackDown",
     "UI/UXDesign",
-    "CodeRed",
     "Technoseek",
     "CodeRelay",
-    "TypingMaster"
+    "TypeMaster"
 ];
 
 const engineering_departments = [

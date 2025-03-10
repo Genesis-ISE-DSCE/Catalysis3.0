@@ -10,4 +10,7 @@ router.post('/contact', contactHandler.sendMessage);
 // Event Registration route
 router.post('/register', eventHandler.registerForEvent);
 
+// Get all event registrations
+router.get('/events', eventHandler.getAllRegistrations);
+
 module.exports = router;
