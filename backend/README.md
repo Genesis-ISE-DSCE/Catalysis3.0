@@ -39,7 +39,7 @@ MAIL_PASSWORD="access-token-for-the-email"
     "name": "Arpit Srivastava",
     "usn": "1DS23IS023",
     "phone": "7319738343",
-    "email": "arpitsrivastava528@gmail.com",
+    "email": "arpitsrivastava529@gmail.com",
     "semester": 4,
     "branch": "Information Science & Engineering",
     "event": ["Technoseek", "TypeMaster", "DSA SmackDown"]
