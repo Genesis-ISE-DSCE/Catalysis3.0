@@ -1,76 +1,94 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import axios from "axios";
 
 const Register = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    event: "",
-    sem: "",
+    events: [],
+    semester: "",
     branch: "",
     usn: "",
-    teamMembers: [],
   });
 
-  const [teamSize, setTeamSize] = useState(0);
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name) newErrors.name = "Name is required";
+    if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Invalid email address";
+    }
+    if (!formData.phone || formData.phone.length !== 10) {
+      newErrors.phone = "Phone number must be 10 digits";
+    }
+    if (!formData.usn || !/^[0-9A-Za-z]{10}$/.test(formData.usn)) {
+      newErrors.usn = "Invalid USN";
+    }
+    if (!formData.semester) newErrors.semester = "Semester is required";
+    if (!formData.branch) newErrors.branch = "Branch is required";
+    if (formData.events.length === 0) newErrors.events = "At least one event must be selected";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const handleTeamMemberChange = (index, e) => {
-    const { name, value } = e.target;
-    const updatedTeamMembers = [...formData.teamMembers];
-    updatedTeamMembers[index] = {
-      ...updatedTeamMembers[index],
-      [name]: value,
-    };
-    setFormData((prevData) => ({
-      ...prevData,
-      teamMembers: updatedTeamMembers,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    toast.success("Thanks for registration :)");
-
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      event: "",
-      sem: "",
-      branch: "",
-      usn: "",
-      teamMembers: [],
-    });
-    setTeamSize(0);
-  };
-
-  useEffect(() => {
-    if (["Code Relay", "Technoseek", "Valorant"].includes(formData.event)) {
-      setTeamSize(2);
+    const { name, value, checked } = e.target;
+    if (name === "events") {
+      setFormData((prevData) => ({
+        ...prevData,
+        events: checked
+          ? [...prevData.events, value]
+          : prevData.events.filter((event) => event !== value),
+      }));
     } else {
-      setTeamSize(0);
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
     }
-  }, [formData.event]);
+  };
 
-  useEffect(() => {
-    setFormData((prevData) => ({
-      ...prevData,
-      teamMembers: Array(Math.max(0, teamSize - 1)).fill({ name: "", usn: "", phone: "" }),
-    }));
-  }, [teamSize]);
-
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      console.log("Form validation failed:", errors);
+      return;
+    }
+  
+    console.log("Submitting form data:", formData);
+  
+    try {
+      const response = await axios.post("http://localhost:8080/register", formData);
+  
+      console.log("Response received:", response);
+  
+      if (response.status === 201) {
+        toast.success("Registration successful!");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          events: [],
+          semester: "",
+          branch: "",
+          usn: "",
+        });
+      }
+    } catch (error) {
+      console.error("Registration error:", error);
+      console.log("Error response:", error.response);
+      toast.error(error.response?.data?.error || "Registration failed. Please try again.");
+    }
+  };
+  
   return (
     <motion.div
       className="flex justify-center items-center min-h-screen p-8 overflow-hidden"
@@ -155,23 +173,28 @@ const Register = () => {
           <label className="block text-[#FF1F53] font-semibold text-sm md:text-base">
             Event Name:
           </label>
-          <select
-            name="event"
-            value={formData.event}
-            onChange={handleChange}
-            className="w-full p-2 md:p-3 border-2 border-[#FF1F53] rounded-lg text-sm md:text-base"
-            required
-          >
-            <option value="" disabled>
-              Select Event
-            </option>
-            <option value="Code Relay">Coding Relay (Team Event)</option>
-            <option value="DSA SmackDown">DSA Smack-Down</option>
-            <option value="Technoseek">Technoseek (Team Event)</option>
-            <option value="TypeMaster">TypeMaster</option>
-            <option value="UI/UX Design">UI/UX Design</option>
-            <option value="Valorant">Valorant (Team Event)</option>
-          </select>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            {[
+              "Code Relay",
+              "DSA SmackDown",
+              "Technoseek",
+              "TypeMaster",
+              "UI/UX Design",
+              "Valorant",
+            ].map((event) => (
+              <label key={event} className="flex items-center">
+                <input
+                  type="checkbox"
+                  name="events"
+                  value={event}
+                  checked={formData.events.includes(event)}
+                  onChange={handleChange}
+                  className="mr-2"
+                />
+                {event}
+              </label>
+            ))}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
@@ -180,8 +203,8 @@ const Register = () => {
               Semester:
             </label>
             <select
-              name="sem"
-              value={formData.sem}
+              name="semester"
+              value={formData.semester}
               onChange={handleChange}
               className="w-full p-2 md:p-3 border-2 border-[#FF1F53] rounded-lg text-sm md:text-base"
               required
