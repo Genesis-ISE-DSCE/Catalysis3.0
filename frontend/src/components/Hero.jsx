@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react';
 import '@fontsource/staatliches';
 const Chem = "/images/chem.png";
 const Game = "/images/game.png";
-const Excite = "/images/excite.png";
+
 
 const calculateTimeLeft = () => {
-  const eventDate = new Date("March 14, 2025 00:00:00").getTime();
+  const eventDate = new Date("March 21, 2025 00:00:00").getTime();
   const now = new Date().getTime();
   const difference = eventDate - now;
 
@@ -41,7 +41,7 @@ export const Hero = () => {
             className="text-center mb-4"
           >
             <p className="text-md md:text-2xl font-bold text-white rounded-full bg-[#ffcc66] px-6 py-2 font-comic-neue inline-block">
-              March 14-15, 2025
+              March 21-22, 2025
             </p>
           </motion.div>
 
@@ -57,7 +57,7 @@ export const Hero = () => {
             <img
               src={Chem}
               alt="Chemistry"
-              className="drop-shadow-lg w-30 h-50 sm:w-50 sm:h-70 xl:w-80 xl:h-120 md:w-60 md:h-90 
+              className="drop-shadow-lg w-30 h-50 sm:w-50 sm:h-70 xl:w-80 xl:h-120 md:w-55 md:h-80 
                transform transition-transform duration-500 hover:scale-110 hover:rotate-3"
             />
           </motion.div>
@@ -73,7 +73,7 @@ export const Hero = () => {
             <img
               src={Game}
               alt="Game"
-              className="drop-shadow-lg w-32 h-30 sm:w-44 sm:h-44 xl:w-86 xl:h-86 md:w-54 md:h-50 mt-12
+              className="drop-shadow-lg w-32 h-30 sm:w-48 sm:h-48 xl:w-86 xl:h-86 md:w-54 md:h-50 mt-12
                transform transition-transform duration-500 hover:scale-110 hover:-rotate-3"
             />
           </motion.div>
@@ -144,7 +144,7 @@ export const Hero = () => {
                     transition={{ type: "spring", stiffness: 100 }}
                   />
                 </motion.div>
-                <span className="mt-2 font-comic-neue uppercase text-xs sm:text-sm font-bold">{unit}</span>
+                <span className="mt-2 font-comic-neue z-10 uppercase text-xs sm:text-sm font-bold">{unit}</span>
               </div>
             ))}
           </div>

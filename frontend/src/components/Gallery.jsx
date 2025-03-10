@@ -1,4 +1,4 @@
-import React from "react";
+
 
 const Gallery = () => {
   const images = [
@@ -13,7 +13,7 @@ const Gallery = () => {
   ];
 
   return (
-    <div className="bg-[#FFC247] min-h-screen flex flex-col py-10 px-4 sm:px-8">
+    <div className="min-h-screen flex flex-col px-4 sm:px-8">
       <h1
         className="text-6xl text-[#7B5CF7] text-center mb-12 font-comic tracking-wide"
         data-aos="zoom-in"
@@ -21,7 +21,7 @@ const Gallery = () => {
         EVENT GALLERY
       </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-7xl mx-auto">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-7xl mx-auto">
         {images.map((src, index) => (
           <div
             key={index}

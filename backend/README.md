@@ -42,6 +42,6 @@ MAIL_PASSWORD="access-token-for-the-email"
     "email": "arpitsrivastava528@gmail.com",
     "semester": 4,
     "branch": "Information Science & Engineering",
-    "event": ["Technoseek", "TypingMaster", "DSASmackDown"]
+    "event": ["Technoseek", "TypeMaster", "DSA SmackDown"]
 }
 ```

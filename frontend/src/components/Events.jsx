@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import PropTypes from "prop-types";
 import {
   Code,
-  Trophy,
   Gamepad,
   Palette,
   Search,
@@ -25,8 +24,7 @@ const EventCard = ({
 }) => {
   return (
     <div
-      className="relative border-4 border-black bg-white p-6 mb-8 rounded-2xl border-r-8 border-b-8 transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 ease-out cursor-pointer"
-      id="events"
+      className="relative border-4 border-black bg-white p-8 mb-8 rounded-2xl border-r-8 border-b-8 transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 ease-out"
       data-aos="fade-up"
       data-aos-delay={delay}
       onClick={() => window.open(pdfLink, "_blank")}
@@ -92,37 +90,37 @@ export function Events() {
       time: "10:00 AM",
       icon: <Code size={40} />,
       delay: "0",
-      pdfLink: "/pdfs/code-relay.pdf",
+     
     },
     {
       title: "DSA SMACKDOWN",
       description:
-        "Intense Data Structures & Algorithms competition to test your problem-solving skills.",
+        "Data Structure & Algorithm competition to test your problem-solving skills.",
       date: "March 7",
       time: "2:00 PM",
       icon: <Brain size={40} />,
       delay: "100",
-      pdfLink: "/pdfs/dsa-smackdown.pdf",
+      
     },
     {
-      title: "VALORANT TOURNAMENT",
+      title: "Code Red",
       description:
-        "Show off your tactical shooter skills in this exciting gaming competition.",
+        "VALORANT Showdown! Prove your skill in this intense battle. Ready to dominate?",
       date: "March 8",
       time: "10:00 AM",
       icon: <Gamepad size={40} />,
       delay: "300",
-      pdfLink: "/pdfs/valorant-tournament.pdf",
+
     },
     {
-      title: "UI DESIGN COMPETITION",
+      title: "UI/UX DESIGN",
       description:
         "Create stunning user interfaces and compete for the best design.",
       date: "March 8",
       time: "11:00 AM",
       icon: <Palette size={40} />,
       delay: "400",
-      pdfLink: "/pdfs/ui-design.pdf",
+   
     },
     {
       title: "TECHNOSEEK",
@@ -132,7 +130,7 @@ export function Events() {
       time: "2:00 PM",
       icon: <Search size={40} />,
       delay: "500",
-      pdfLink: "/pdfs/technoseek.pdf",
+ 
     },
     {
       title: "TYPEMASTER",
@@ -142,12 +140,12 @@ export function Events() {
       time: "4:00 PM",
       icon: <Keyboard size={40} />,
       delay: "600",
-      pdfLink: "/pdfs/typemaster.pdf",
+     
     },
   ];
 
   return (
-    <div className="bg-[#FFC247] min-h-screen p-8 font-comic">
+    <div className="min-h-screen p-8 font-comic" id="events">
       <h1
         className="text-6xl text-white text-center mb-12 font-comic tracking-wide"
         data-aos="zoom-in"
