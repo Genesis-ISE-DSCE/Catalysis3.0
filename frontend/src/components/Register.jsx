@@ -19,13 +19,16 @@ const Register = () => {
   const [errors, setErrors] = useState({});
 
   const validateForm = () => {
+    let isValid = true;
     const newErrors = {};
     if (!formData.name) newErrors.name = "Name is required";
     if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Invalid email address";
+      isValid = false;
     }
-    if (!formData.phone || formData.phone.length !== 10) {
+    if (!formData.phone || formData.phone.length !== 10 || !/^\d{10}$/.test(formData.phone)) {
       newErrors.phone = "Phone number must be 10 digits";
+      isValid = false;
     }
     if (!formData.usn || !/^[0-9A-Za-z]{10}$/.test(formData.usn)) {
       newErrors.usn = "Invalid USN";
@@ -35,7 +38,16 @@ const Register = () => {
     if (formData.events.length === 0) newErrors.events = "At least one event must be selected";
 
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+
+    if (!isValid) {
+      toast.error("Phone number or Email is not valid!");
+    }
+
+    return isValid;
+
+
+   
+  
   };
 
   const handleChange = (e) => {
@@ -144,7 +156,7 @@ const Register = () => {
               Phone Number:
             </label>
             <input
-              type="number"
+              type="phone"
               name="phone"
               value={formData.phone}
               onChange={handleChange}
