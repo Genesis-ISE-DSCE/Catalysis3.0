@@ -66,7 +66,7 @@ const eventSchema = new mongoos.Schema(
       enum: engineering_departments,
       required: true,
     },
-    events: {
+    event: {
       type: [String],
       enum: events,
       required: true,

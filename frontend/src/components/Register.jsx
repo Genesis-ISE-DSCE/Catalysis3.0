@@ -10,7 +10,7 @@ const Register = () => {
     name: "",
     email: "",
     phone: "",
-    events: [],
+    event: [],
     semester: "",
     branch: "",
     usn: "",
@@ -35,7 +35,7 @@ const Register = () => {
     }
     if (!formData.semester) newErrors.semester = "Semester is required";
     if (!formData.branch) newErrors.branch = "Branch is required";
-    if (formData.events.length === 0) newErrors.events = "At least one event must be selected";
+    if (formData.event.length === 0) newErrors.event = "At least one event must be selected";
 
     setErrors(newErrors);
 
@@ -52,12 +52,12 @@ const Register = () => {
 
   const handleChange = (e) => {
     const { name, value, checked } = e.target;
-    if (name === "events") {
+    if (name === "event") {
       setFormData((prevData) => ({
         ...prevData,
-        events: checked
-          ? [...prevData.events, value]
-          : prevData.events.filter((event) => event !== value),
+        event: checked
+          ? [...prevData.event, value]
+          : prevData.event.filter((event) => event !== value),
       }));
     } else {
       setFormData((prevData) => ({
@@ -88,7 +88,7 @@ const Register = () => {
           name: "",
           email: "",
           phone: "",
-          events: [],
+          event: [],
           semester: "",
           branch: "",
           usn: "",
@@ -197,9 +197,9 @@ const Register = () => {
               <label key={event} className="flex items-center">
                 <input
                   type="checkbox"
-                  name="events"
+                  name="event"
                   value={event}
-                  checked={formData.events.includes(event)}
+                  checked={formData.event.includes(event)}
                   onChange={handleChange}
                   className="mr-2"
                 />
