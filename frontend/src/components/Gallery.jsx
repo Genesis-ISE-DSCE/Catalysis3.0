@@ -2,14 +2,14 @@
 
 const Gallery = () => {
   const images = [
-    "/images/placeholder.png",
-    "/images/placeholder.png",
-    "/images/placeholder.png",
-    "/images/placeholder.png",
-    "/images/placeholder.png",
-    "/images/placeholder.png",
-    "/images/placeholder.png",
-    "/images/placeholder.png",
+    "/images/IMG_5920.jpg",
+    "/images/IMG_6014.jpg",
+    "/images/IMG_5916.jpg",
+    "/images/IMG_6192.jpg",
+    "/images/IMG_6010.jpg",
+    "/images/IMG_5897.jpg",
+    "/images/IMG_6023.jpg",
+    "/images/IMG_5859.jpg",
   ];
 
   return (

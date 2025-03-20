@@ -14,6 +14,8 @@ import Navbar from './components/Navbar'
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { Login } from './components/Login';
 import { useState, useEffect } from 'react';
+import RegClosed from './components/RegClosed'
+import Footer from './components/Footer'
 
 const AdminRoute = () => {
   const { isAuthenticated } = useAuth();
@@ -51,12 +53,14 @@ function App() {
             <Gallery />
             <FAQSection />
             <Contact />
+            <Footer />
           </>
         } />
         <Route path="/register" element={
           <>
             <Navbar />
             <Register />
+          
           </>
         } />
         <Route path="/login" element={<Login />} />

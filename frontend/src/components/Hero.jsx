@@ -7,7 +7,7 @@ const Game = "/images/game.png";
 
 
 const calculateTimeLeft = () => {
-  const eventDate = new Date("March 21, 2025 00:00:00").getTime();
+  const eventDate = new Date("March 28, 2025 00:00:00").getTime();
   const now = new Date().getTime();
   const difference = eventDate - now;
 
@@ -41,7 +41,7 @@ export const Hero = () => {
             className="text-center mb-4"
           >
             <p className="text-md md:text-2xl font-bold text-white rounded-full bg-[#ffcc66] px-6 py-2 font-comic-neue inline-block">
-              March 21-22, 2025
+              March 28-29, 2025
             </p>
           </motion.div>
 
