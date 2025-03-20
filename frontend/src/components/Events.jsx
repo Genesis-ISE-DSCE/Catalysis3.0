@@ -27,7 +27,6 @@ const EventCard = ({
       className="relative border-4 border-black bg-white p-8 mb-8 rounded-2xl border-r-8 border-b-8 transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 ease-out"
       data-aos="fade-up"
       data-aos-delay={delay}
-      onClick={() => window.open(pdfLink, "_blank")}
     >
       {/* Icon Circle */}
       <div className="absolute -right-5 -top-5 w-16 h-16 rounded-full bg-red-500 flex items-center justify-center text-white z-10 border-black border-4 transition-transform duration-300 ease-out hover:rotate-12">
@@ -42,7 +41,22 @@ const EventCard = ({
       {/* Description */}
       <h4 className="text-[#374151] mb-4">{description}</h4>
 
-      {/* Dashed Line */}
+      {/* Rulebook Button */}
+        {pdfLink && (
+          <div className="relative group mt-2">
+            <button
+          className="bg-[#00237A] text-white px-4 py-2 rounded-lg cursor-pointer transition-transform duration-300 transform group-hover:scale-110"
+          onClick={() => window.open(pdfLink, "_blank", "noopener,noreferrer")}
+            >
+          View Rulebook
+            </button>
+            <div className="absolute left-0 top-full mt-2 shadow-gray-400 w-48 bg-white text-black text-sm p-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          Click to view the detailed rulebook for this event.
+            </div>
+          </div>
+        )}
+
+        {/* Dashed Line */}
       <div className="border-t border-dashed border-[#D1D5DB] my-4"></div>
 
       {/* Date and Time */}
@@ -84,64 +98,60 @@ export function Events() {
   const events = [
     {
       title: "CODE RELAY",
-      description:
-        "Team-based coding competition where participants relay code solutions.",
-      date: "March 7",
-      time: "10:00 AM",
+      description: "Team-based coding competition where participants relay code solutions.",
+      date: "March 28",
+      time: "11:30 AM",
       icon: <Code size={40} />,
       delay: "0",
-     
+      pdfLink: "/pdfs/codingrelay.pdf",
+    },
+    
+    {
+      title: "Code Red",
+      description: "VALORANT Showdown! Prove your skill in this intense battle. Ready to dominate?",
+      date: "March 28 & 29",
+      time: "11:00 AM & 10:00 AM",
+      icon: <Gamepad size={40} />,
+      delay: "300",
+      pdfLink: "/pdfs/codered.pdf",
     },
     {
       title: "DSA SMACKDOWN",
-      description:
-        "Data Structure & Algorithm competition to test your problem-solving skills.",
-      date: "March 7",
+      description: "Data Structure & Algorithm competition to test your problem-solving skills.",
+      date: "March 28",
       time: "2:00 PM",
       icon: <Brain size={40} />,
       delay: "100",
-      
-    },
-    {
-      title: "Code Red",
-      description:
-        "VALORANT Showdown! Prove your skill in this intense battle. Ready to dominate?",
-      date: "March 8",
-      time: "10:00 AM",
-      icon: <Gamepad size={40} />,
-      delay: "300",
-
-    },
-    {
-      title: "UI/UX DESIGN",
-      description:
-        "Create stunning user interfaces and compete for the best design.",
-      date: "March 8",
-      time: "11:00 AM",
-      icon: <Palette size={40} />,
-      delay: "400",
-   
-    },
-    {
-      title: "TECHNOSEEK",
-      description:
-        "Technical treasure hunt that will test your technical and logical thinking.",
-      date: "March 8",
-      time: "2:00 PM",
-      icon: <Search size={40} />,
-      delay: "500",
- 
+      pdfLink: "/pdfs/dsasmakdown.pdf",
     },
     {
       title: "TYPEMASTER",
-      description:
-        "Show off your typing speed and accuracy in this fast-paced competition.",
-      date: "March 8",
-      time: "4:00 PM",
+      description: "Show off your typing speed and accuracy in this fast-paced competition.",
+      date: "March 29",
+      time: "11:00 AM",
       icon: <Keyboard size={40} />,
       delay: "600",
-     
+      pdfLink: "/pdfs/typemaster.pdf",
     },
+    {
+      title: "UI/UX DESIGN",
+      description: "Create stunning user interfaces and compete for the best design.",
+      date: "March 29",
+      time: "10:00 AM",
+      icon: <Palette size={40} />,
+      delay: "400",
+      pdfLink: "/pdfs/uiux.pdf",
+    },
+    {
+      title: "TECHNOSEEK",
+      description: "Technical treasure hunt that will test your technical and logical thinking.",
+      date: "March 29",
+      time: "11:00 AM",
+      icon: <Search size={40} />,
+      delay: "500",
+      pdfLink: "/pdfs/technoseek.pdf",
+    },
+    
   ];
 
   return (
