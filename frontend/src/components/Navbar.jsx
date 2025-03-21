@@ -72,7 +72,7 @@ const Navbar = () => {
           </motion.div>
 
           {/* Centered Navigation Items */}
-          <div className="hidden md:flex items-center justify-center space-x-12 p-2 flex-1">
+          <div className="hidden md:flex font-comic items-center justify-center space-x-12 p-2 flex-1">
             {navItems.map((item) => (
               <button
                 key={item.to}
@@ -90,7 +90,7 @@ const Navbar = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-4 py-2 bg-[#2606AA] text-white rounded-lg font-bold shadow-comic flex items-center"
+              className="px-4 py-2 bg-[#2606AA] text-white rounded-lg font-comic font-bold shadow-comic flex items-center"
               onClick={() => navigate("/register")}
             >
               Register <ChevronRight className="w-4 h-4 ml-1" />

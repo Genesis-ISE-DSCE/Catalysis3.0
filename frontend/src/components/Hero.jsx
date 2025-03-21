@@ -171,7 +171,7 @@ export const Hero = () => {
                 whileHover={{ x: 0 }}
                 transition={{ type: "spring", stiffness: 100 }}
               />
-            </motion.button>;
+            </motion.button>
 
           </div>
         </div>

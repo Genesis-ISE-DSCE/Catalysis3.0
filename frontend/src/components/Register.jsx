@@ -115,13 +115,13 @@ const Register = () => {
         transition={{ duration: 1.2 }}
         onSubmit={handleSubmit}
       >
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-[#FF1F53] mb-4">
+        <h2 className="text-2xl font-comic md:text-3xl font-bold text-center text-[#FF1F53] mb-4">
           Registration Form
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid  grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-[#FF1F53] font-semibold text-sm md:text-base">
+            <label className="block text-[#FF1F53] font-comic font-semibold text-sm md:text-base">
               Name:
             </label>
             <input
@@ -135,7 +135,7 @@ const Register = () => {
             />
           </div>
           <div>
-            <label className="block text-[#FF1F53] font-semibold text-sm md:text-base">
+            <label className="block text-[#FF1F53] font-comic font-semibold text-sm md:text-base">
               Email:
             </label>
             <input
@@ -152,7 +152,7 @@ const Register = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
           <div>
-            <label className="block text-[#FF1F53] font-semibold text-sm md:text-base">
+            <label className="block text-[#FF1F53] font-comic font-semibold text-sm md:text-base">
               Phone Number:
             </label>
             <input
@@ -166,7 +166,7 @@ const Register = () => {
             />
           </div>
           <div>
-            <label className="block text-[#FF1F53] font-semibold text-sm md:text-base">
+            <label className="block text-[#FF1F53] font-comic font-semibold text-sm md:text-base">
               USN:
             </label>
             <input
@@ -182,10 +182,10 @@ const Register = () => {
         </div>
 
         <div className="mt-4">
-          <label className="block text-[#FF1F53] font-semibold text-sm md:text-base">
+          <label className="block text-[#FF1F53] font-comic font-semibold text-sm md:text-base">
             Event Name:
           </label>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 font-comic text-[#2606AA] md:grid-cols-2 gap-2">
             {[
               "Code Relay",
               "DSA SmackDown",
@@ -211,7 +211,7 @@ const Register = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
           <div>
-            <label className="block text-[#FF1F53] font-semibold text-sm md:text-base">
+            <label className="block text-[#FF1F53] font-comic font-semibold text-sm md:text-base">
               Semester:
             </label>
             <select
@@ -232,7 +232,7 @@ const Register = () => {
             </select>
           </div>
           <div>
-            <label className="block text-[#FF1F53] font-semibold text-sm md:text-base">
+            <label className="block text-[#FF1F53] font-comic font-semibold text-sm md:text-base">
               Branch:
             </label>
             <select
@@ -282,7 +282,7 @@ const Register = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.3 }}
-          className="w-full mt-6 bg-[#FF1F53] text-white py-2 rounded-lg font-semibold hover:bg-[#D91642] transition duration-300"
+          className="w-full mt-6 bg-[#FF1F53] font-comic text-white py-2 rounded-lg font-semibold hover:bg-[#D91642] transition duration-300"
           type="submit"
         >
           Register

@@ -20,11 +20,11 @@ const Footer = () => {
                         <img src={mailLogo} loading="lazy" alt="Logo" className = "h-14"/>
                     </a>
                 </div>
-                <div className ="text-center font-semibold py-2 text-[#ffffff]">Medha: <a href="tel:9008243280">9008243280</a> | Piyush: <a href="tel:7483408791">7483408791</a></div>
+                <div className ="text-center font-semibold py-2 text-[#ffffff]">Medha: <a href="tel:7892366480">7892366480</a> | Piyush: <a href="tel:8105740466">8105740466</a></div>
                     <div></div>
                 <div className ="text-center text-lg px-2 py-4 pb-5 text-[#ffffff] ">&#169; 2025 Catalysis3.0 </div>
             </footer>
-            <div className="bg-[#271182] text-center font-semibold text-white p-2">Made by team <a href="https://www.instagram.com/genesis.ise/" rel='noreferrer noopener' target="_blank" className='text-purple-300'>Genesis</a> with ❤️</div>
+            <div className="bg-[#23049c] text-center font-semibold text-white p-2">Made by team <a href="https://www.instagram.com/genesis.ise/" rel='noreferrer noopener' target="_blank" className='text-purple-300'>Genesis</a> with ❤️</div>
       
     </div>
   )
