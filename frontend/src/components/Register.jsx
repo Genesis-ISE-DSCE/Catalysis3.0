@@ -187,11 +187,11 @@ const Register = () => {
           </label>
           <div className="grid grid-cols-1 font-comic text-[#2606AA] md:grid-cols-2 gap-2">
             {[
-              "Code Relay",
+              "Code Relay (Team Event)",
               "DSA SmackDown",
-              "Technoseek",
+              "Technoseek (Team Event)",
               "TypeMaster",
-              "UI/UX Design",
+              "UI/UX Design (Team Event)",
               "Valorant",
             ].map((event) => (
               <label key={event} className="flex items-center">
