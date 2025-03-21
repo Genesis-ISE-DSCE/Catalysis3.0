@@ -6,9 +6,9 @@ import { useNavigate } from 'react-router-dom';
 
 const initialEvents = {
   'DSA SmackDown': [],
-  'UI/UX Design': [],
-  'Technoseek': [],
-  'Code Relay': [],
+  'UI/UX Design (Team Event)': [],
+  'Technoseek (Team Event)': [],
+  'Code Relay (Team Event)': [],
   'TypeMaster': [],
   'Valorant': []
 };
