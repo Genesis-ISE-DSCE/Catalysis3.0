@@ -67,10 +67,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             onClick={() => navigate("/")}
           >
-            <div className="relative w-8 h-8">
-              <div className="absolute inset-0 bg-[#2606AA] rounded-full transform rotate-45"></div>
-              <Calendar className="w-8 h-8 text-white relative z-10" />
-            </div>
+            <img src="/favicon-1.png" alt="Logo" className="w-8 h-8" />
             <span className="text-2xl font-comic text-[#2606AA]">CATALYSIS</span>
           </motion.div>
 
