@@ -24,12 +24,15 @@ const Navbar = () => {
     { to: "about", label: "About" },
     { to: "events", label: "Events" },
     { to: "schedule", label: "Schedule" },
-    { to: "contact", label: "Contact" }
+    { to: "contact", label: "Contact" },
+    { to: "rulebook", label: "RuleBook", pdfPath: "/pdfs/RuleBook.pdf" },
   ];
 
   // Function to handle navigation and scrolling
-  const handleNavClick = (to) => {
-    if (isHome) {
+  const handleNavClick = (to, pdfPath) => {
+    if (pdfPath) {
+      window.open(pdfPath, '_blank');
+    } else if (isHome) {
       scroller.scrollTo(to, {
         smooth: true,
         duration: 500,
@@ -75,8 +78,8 @@ const Navbar = () => {
           <div className="hidden md:flex font-comic items-center justify-center space-x-12 p-2 flex-1">
             {navItems.map((item) => (
               <button
+                onClick={() => handleNavClick(item.to, item.pdfPath)}
                 key={item.to}
-                onClick={() => handleNavClick(item.to)}
                 className="text-[#2606AA] hover:text-[#ff1f53] text-lg relative group cursor-pointer"
               >
                 {item.label}

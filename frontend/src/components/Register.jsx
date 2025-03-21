@@ -187,7 +187,7 @@ const Register = () => {
           </label>
           <div className="grid grid-cols-1 font-comic text-[#2606AA] md:grid-cols-2 gap-2">
             {[
-              "Code Relay (Team Event)",
+              "Coding Relay (Team Event)",
               "DSA SmackDown",
               "Technoseek (Team Event)",
               "TypeMaster",

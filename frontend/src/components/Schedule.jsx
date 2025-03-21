@@ -8,7 +8,7 @@ export const Schedule = () => {
       id: 1,
       srNo: "#1",
       time: "11:30 AM-1:30 PM",
-      event: "Code Relay",
+      event: "Coding Relay",
       date: "28/03/2022",
       venue: "ISE Department",
       color: "red",

@@ -97,13 +97,13 @@ export function Events() {
 
   const events = [
     {
-      title: "CODE RELAY",
+      title: "Coding Relay",
       description: "Team-based coding competition where participants relay code solutions.",
       date: "March 28",
       time: "11:30 AM",
       icon: <Code size={40} />,
       delay: "0",
-      pdfLink: "/pdfs/codingrelay.pdf",
+      pdfLink: "/pdfs/Coding Relay.pdf",
     },
     
     {
@@ -113,7 +113,7 @@ export function Events() {
       time: "11:00 AM & 10:00 AM",
       icon: <Gamepad size={40} />,
       delay: "300",
-      pdfLink: "/pdfs/codered.pdf",
+      pdfLink: "/pdfs/CodeRed.pdf",
     },
     {
       title: "DSA SMACKDOWN",
@@ -122,7 +122,7 @@ export function Events() {
       time: "2:00 PM",
       icon: <Brain size={40} />,
       delay: "100",
-      pdfLink: "/pdfs/dsasmakdown.pdf",
+      pdfLink: "/pdfs/DSA Smackdown.pdf",
     },
     {
       title: "TYPEMASTER",
@@ -131,7 +131,7 @@ export function Events() {
       time: "11:00 AM",
       icon: <Keyboard size={40} />,
       delay: "600",
-      pdfLink: "/pdfs/typemaster.pdf",
+      pdfLink: "/pdfs/TypeMaster.pdf",
     },
     {
       title: "UI/UX DESIGN",
@@ -140,7 +140,7 @@ export function Events() {
       time: "10:00 AM",
       icon: <Palette size={40} />,
       delay: "400",
-      pdfLink: "/pdfs/uiux.pdf",
+      pdfLink: "/pdfs/UI UX Design.pdf",
     },
     {
       title: "TECHNOSEEK",
@@ -149,7 +149,7 @@ export function Events() {
       time: "11:00 AM",
       icon: <Search size={40} />,
       delay: "500",
-      pdfLink: "/pdfs/technoseek.pdf",
+      pdfLink: "/pdfs/TechnoSeek.pdf",
     },
     
   ];

@@ -1,7 +1,5 @@
 
-import instaLogo from '/public/images/instagramlogo.png';
-import linkedInLogo from '/public/images/linkedinlogo.png';
-import mailLogo from '/public/images/maillogo.png';
+
 
 const Footer = () => {
   return (
@@ -9,15 +7,15 @@ const Footer = () => {
         <footer className= "text-center text-white pb-6">
                 <div className="pt-9 flex justify-center mb-9">
                     <a href="https://instagram.com/genesis.ise" target="_blank" className="mr-9" rel="noreferrer">
-                        <img src={instaLogo} loading="lazy" alt="Logo" className = "h-14 pl-7"/>
+                        <img src="/images/instagramlogo.png" loading="lazy" alt="Logo" className = "h-14 pl-7"/>
                     </a>
                     <a href="https://www.linkedin.com/company/gensis-ise-dsce/" target="_blank"
                     className="mr-9" rel="noreferrer">
-                        <img src={linkedInLogo} loading="lazy" alt="Logo" className = "h-14"/>
+                        <img src="/images/linkedinlogo.png" loading="lazy" alt="Logo" className = "h-14"/>
                     </a>            
                     <a href="mailto:ise.genesis.dsce@gmail.com" target="_blank"
                     className="mr-9" rel="noreferrer">
-                        <img src={mailLogo} loading="lazy" alt="Logo" className = "h-14"/>
+                        <img src="/images/maillogo.png" loading="lazy" alt="Logo" className = "h-14"/>
                     </a>
                 </div>
                 <div className ="text-center font-semibold py-2 text-[#ffffff]">Medha: <a href="tel:7892366480">7892366480</a> | Piyush: <a href="tel:8105740466">8105740466</a></div>
