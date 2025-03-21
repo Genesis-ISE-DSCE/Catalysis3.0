@@ -2,11 +2,11 @@ const mongoos = require("mongoose");
 
 // events available
 const events = [
-  "Code Relay",
+  "Code Relay (Team Event)",
   "DSA SmackDown",
-  "Technoseek",
+  "Technoseek (Team Event)",
   "TypeMaster",
-  "UI/UX Design",
+  "UI/UX Design (Team Event)",
   "Valorant",
 ];
 
