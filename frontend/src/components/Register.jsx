@@ -84,7 +84,7 @@ const Register = () => {
     setIsLoading(true);
   
     try {
-      const response = await axios.post("http://localhost:8080/register", formData);
+      const response = await axios.post("https://catalysis.up.railway.app/register", formData);
   
       console.log("Response received:", response);
   
