@@ -72,7 +72,7 @@ const Navbar = () => {
           </motion.div>
 
           {/* Centered Navigation Items */}
-          <div className="hidden md:flex font-comic items-center justify-center space-x-12 p-2 flex-1">
+          <div className="hidden md:flex font-comic items-center justify-center space-x-8 p-2 flex-1">
             {navItems.map((item) => (
               <button
                 onClick={() => handleNavClick(item.to, item.pdfPath)}
