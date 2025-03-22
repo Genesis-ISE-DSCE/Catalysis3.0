@@ -22,12 +22,12 @@ export const FAQSection = () => {
         "Catalysis v3 will take place on March 28-29, 2025, at the Department of Information Science and Engineering, DSCE Bangalore 🏫",
     },
     {
-      question: "What type of events and competitions can I expect?",
+      question: "What type of events can I expect?",
       answer:
         "The technical fest will include various events, such as Coding Competition, Technoseek, Gaming, Testing your Tying Speed, Leveraging your UI/UX talent and many more exciting competitions!🤖",
     },
     {
-      question: "BOOM! Can non-IT students join the action?",
+      question: "Can non-IT students join the action?",
       answer:
         "Absolutely! The technical fest welcomes tech enthusiasts from all branches to unleash their skills!💻",
     },
@@ -68,7 +68,7 @@ export const FAQSection = () => {
   };
 
   return (
-    <div className="relative w-full max-w-[100vw] mx-auto py-10 bg-[#FFC247] overflow-hidden">
+    <div className="relative w-full max-w-[100vw] mx-auto py-10 bg-[#FFC247] overflow-hidden" id="faqs">
       <div className="container mx-auto px-4 relative flex flex-col lg:flex-row items-center justify-between gap-8">
         <div className="w-full lg:w-[60%] space-y-6 z-10">
           <motion.div

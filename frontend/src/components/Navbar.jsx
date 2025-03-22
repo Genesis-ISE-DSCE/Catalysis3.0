@@ -24,7 +24,7 @@ const Navbar = () => {
     { to: "about", label: "About" },
     { to: "events", label: "Events" },
     { to: "schedule", label: "Schedule" },
-    { to: "contact", label: "Contact" },
+    { to: "faqs", label: "FAQs" }, // Ensure the section with id="faqs" exists in the target page
     { to: "/brochure", label: "Brochure" }, 
     {to: "/Rulebook", label: "Rulebook"}
   ];

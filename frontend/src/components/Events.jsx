@@ -52,9 +52,7 @@ const EventCard = ({
           >
             {isExpanded ? "Close Rulebook" : "View Rulebook"}
           </button>
-          <div className="absolute left-0 top-full mt-2 shadow-gray-400 w-48 bg-white text-black text-sm p-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            Click to {isExpanded ? "hide" : "view"} the detailed rulebook for this event.
-          </div>
+          
         </div>
       )}
 

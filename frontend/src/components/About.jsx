@@ -50,7 +50,7 @@ export const About = () => {
               ABOUT US
             </h2>
             <p className="text-[#ffffff] text-xl font-comic-neue leading-relaxed">
-              Catalysis is an inter-department, extravagant 3-days tech fest, 
+              Catalysis is an inter-department, extravagant 2-days tech fest, 
               hosted by the ISE Department of Dayananda Sagar College of Engineering (DSCE), Bangalore. 
               Catalysis aims to bring out the technical aspects in students by incorporating tech in 
               various events going to be held through the whole of the fest. Through this event, we seek to 
