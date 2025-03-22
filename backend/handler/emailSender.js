@@ -27,6 +27,7 @@ const sendEmail = async (to, subject, text, html) => {
       subject,
       text, 
       html,
+      attachments,
     };
 
     // Send the email

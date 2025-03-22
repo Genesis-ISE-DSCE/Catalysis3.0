@@ -37,6 +37,8 @@ Thank you for joining us! Stay tuned to our Instagram page (@genesis.ise) for fu
 
 For any queries, feel free to contact us via this email, our Instagram page or visit the registration desks.
 
+Please check the attached PDFs for rulebook and code of conduct.
+
 Looking forward to an amazing event with you!
 
 Team Genesis`;
@@ -52,11 +54,29 @@ Team Genesis`;
 
   <p>For any event-related queries, feel free to reach out via this email, our Instagram page or visit the registration desks.</p>
 
+  <p><strong>Please check the attached PDFs for rulebook and code of conduct.</strong></p>
+
   <p>Looking forward to an amazing event with you!</p>
 
   <p><strong>Team Genesis</strong></p>
 `;
-    await sendEmail(email, subject, text, html);
+    const attachments = [
+      {
+        filename: 'Code-of-conduct',
+        path: 'Catalysis3.0/backend/handler/Code of Conduct.pdf' 
+      },
+      {
+        filename: 'Rulebook',
+        path: 'Catalysis3.0/backend/handler/RuleBook_final.pdf' 
+      },
+      {
+        filename: 'Terms-and-conditions',
+        path: 'Catalysis3.0/backend/handler/Terms and Conditions.pdf'
+      }
+    ];
+
+    // Pass attachments to the sendEmail function
+    await sendEmail(email, subject, text, html, attachments);
 
     res.status(201).json({ message: 'Registration successful!', data: newRegistration });
   } catch (error) {
