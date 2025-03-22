@@ -18,6 +18,7 @@ const transporter = nodemailer.createTransport({
  * @param {string} subject - Email subject
  * @param {string} text - Email body (plain text)
  * @param {string} html - Email body (HTML)
+ * @param {Array} attachments - Email attachments (optional)
  */
 const sendEmail = async (to, subject, text, html) => {
   try {
