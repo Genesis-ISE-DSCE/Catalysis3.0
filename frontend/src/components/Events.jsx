@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import {
   Code,
@@ -21,10 +21,12 @@ const EventCard = ({
   icon,
   delay,
   pdfLink,
+  isExpanded,
+  onClick,
 }) => {
   return (
     <div
-      className="relative border-4 border-black bg-white p-8 mb-8 rounded-2xl border-r-8 border-b-8 transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 ease-out"
+      className="relative border-4 border-black bg-white p-8 rounded-2xl border-r-8 border-b-8 transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 ease-out"
       data-aos="fade-up"
       data-aos-delay={delay}
     >
@@ -42,21 +44,30 @@ const EventCard = ({
       <h4 className="text-[#374151] mb-4">{description}</h4>
 
       {/* Rulebook Button */}
-        {pdfLink && (
-          <div className="relative group mt-2">
-            <button
-          className="bg-[#00237A] text-white px-4 py-2 rounded-lg cursor-pointer transition-transform duration-300 transform group-hover:scale-110"
-          onClick={() => window.open(pdfLink, "_blank", "noopener,noreferrer")}
-            >
-          View Rulebook
-            </button>
-            <div className="absolute left-0 top-full mt-2 shadow-gray-400 w-48 bg-white text-black text-sm p-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          Click to view the detailed rulebook for this event.
-            </div>
-          </div>
-        )}
+      {pdfLink && (
+        <div className="relative group mt-2">
+          <button
+            className="bg-[#00237A] text-white px-4 py-2 rounded-lg cursor-pointer transition-transform duration-300 transform group-hover:scale-110"
+            onClick={onClick}
+          >
+            {isExpanded ? "Close Rulebook" : "View Rulebook"}
+          </button>
+          
+        </div>
+      )}
 
-        {/* Dashed Line */}
+      {/* Display PDF */}
+      {isExpanded && (
+        <div className="mt-4 w-full h-[500px] border border-gray-300 rounded-lg overflow-hidden">
+          <iframe
+            src={pdfLink}
+            className="w-full h-full"
+            title="Rulebook PDF"
+          ></iframe>
+        </div>
+      )}
+
+      {/* Dashed Line */}
       <div className="border-t border-dashed border-[#D1D5DB] my-4"></div>
 
       {/* Date and Time */}
@@ -82,6 +93,8 @@ EventCard.propTypes = {
   icon: PropTypes.element.isRequired,
   delay: PropTypes.string.isRequired,
   pdfLink: PropTypes.string.isRequired,
+  isExpanded: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export function Events() {
@@ -95,6 +108,12 @@ export function Events() {
     }
   }, []);
 
+  const [expandedEvent, setExpandedEvent] = useState(null);
+
+  const handleEventClick = (index) => {
+    setExpandedEvent(expandedEvent === index ? null : index);
+  };
+
   const events = [
     {
       title: "Coding Relay",
@@ -105,7 +124,6 @@ export function Events() {
       delay: "0",
       pdfLink: "/pdfs/Coding Relay.pdf",
     },
-    
     {
       title: "Code Red",
       description: "VALORANT Showdown! Prove your skill in this intense battle. Ready to dominate?",
@@ -151,7 +169,6 @@ export function Events() {
       delay: "500",
       pdfLink: "/pdfs/TechnoSeek.pdf",
     },
-    
   ];
 
   return (
@@ -165,16 +182,24 @@ export function Events() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
         {events.map((event, index) => (
-          <EventCard
+          <div
             key={index}
-            title={event.title}
-            description={event.description}
-            date={event.date}
-            time={event.time}
-            icon={event.icon}
-            delay={event.delay}
-            pdfLink={event.pdfLink}
-          />
+            className={`transition-all duration-300 ease-out ${
+              expandedEvent === index ? "row-span-2" : "row-span-1"
+            }`}
+          >
+            <EventCard
+              title={event.title}
+              description={event.description}
+              date={event.date}
+              time={event.time}
+              icon={event.icon}
+              delay={event.delay}
+              pdfLink={event.pdfLink}
+              isExpanded={expandedEvent === index}
+              onClick={() => handleEventClick(index)}
+            />
+          </div>
         ))}
       </div>
     </div>

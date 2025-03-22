@@ -12,30 +12,36 @@ export const FAQSection = () => {
 
   const faqs = [
     {
-      question: "WHEN? WHERE? HOW?",
+      question: "What is Catalysis ?",
       answer:
-        "March 7th & 8th, 2025! Join us at ISE Department for this legendary showdown! 🚀",
+        "Catalysis is a 2-day interdepartmental technical fest organised by team Genesis of the Department of Information Science and Engineering ⚡",
     },
     {
-      question: "KA-CHING! What's the registration fee and how do I register?",
+      question: "When and where will Catalysis v3 take place?",
       answer:
-        "Early bird heroes get special powers (discounts)! Check our registration page, fill in the deets, and you're all set! 💰🚀",
+        "Catalysis v3 will take place on March 28-29, 2025, at the Department of Information Science and Engineering, DSCE Bangalore 🏫",
     },
     {
-      question: "BOOM! Can non-IT students join the action?",
+      question: "What type of events can I expect?",
       answer:
-        "Absolutely! The technical fest welcomes tech enthusiasts from all branches to unleash their skills! 🎉",
+        "The technical fest will include various events, such as Coding Competition, Technoseek, Gaming, Testing your Tying Speed, Leveraging your UI/UX talent and many more exciting competitions!🤖",
     },
     {
-      question: "WHAT'S ON THE MENU? (Events & Competitions)",
+      question: "Can non-IT students join the action?",
       answer:
-        "Brace yourself for epic hackathons, coding duels, Tech Treasure Hunts, quizzes, and more! 🤖💻",
+        "Absolutely! The technical fest welcomes tech enthusiasts from all branches to unleash their skills!💻",
     },
     {
-      question: "ZAP! Prizes for the brave?",
+      question: "Will there be prizes for the brave?",
       answer:
-        "You bet! Winners walk away with prizes, glory, and ultimate bragging rights! 🏆",
+        "Yes! Win epic prizes for each event, ultimate glory and unbeatable bragging rights!🏆",
     },
+    {
+      question: "How can I participate in Catalysis v3?",
+      answer:
+        "Register online through the official website and secure your spot at Catalysis v3!🎉",
+    },
+    
   ];
 
   const accordionVariants = {
@@ -62,7 +68,7 @@ export const FAQSection = () => {
   };
 
   return (
-    <div className="relative w-full max-w-[100vw] mx-auto py-10 bg-[#FFC247] overflow-hidden">
+    <div className="relative w-full max-w-[100vw] mx-auto py-10 bg-[#FFC247] overflow-hidden" id="faqs">
       <div className="container mx-auto px-4 relative flex flex-col lg:flex-row items-center justify-between gap-8">
         <div className="w-full lg:w-[60%] space-y-6 z-10">
           <motion.div

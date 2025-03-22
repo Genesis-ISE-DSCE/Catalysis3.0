@@ -32,8 +32,8 @@ export const Hero = () => {
   }, []);
 
   return (
-    <div className="h-screen flex items-center justify-center overflow-hidden py-24 px-0 font-comic ">
-      <div className=" z-10 container mx-auto mt-12">
+    <div className="min-h-screen flex items-center justify-center overflow-hidden py-24 px-0 font-comic ">
+      <div className=" z-10 container mx-auto">
         <div className="text-center">
           <motion.div
             initial={{ y: -50, opacity: 0 }}
@@ -103,19 +103,30 @@ export const Hero = () => {
             transition={{ type: "spring", duration: 0.8 }}
             className="inline-block mb-3 relative"
           >
-            <h1 className="text-[#ff1f53] mt-5 sm:text-8xl text-7xl md:text-[8rem] font-stat font-bold relative text-center tracking-wide">
-              {Array.from("CATALYSIS").map((letter, index) => (
-                <span key={index} className="relative inline-block mx-0.5">
-
-                  <span className="absolute md:top-[7px] top-[4px] right-[7px] text-black">
-                    {letter}
+            <div className="relative text-center">
+              <h1 className="text-[#ff1f53] mt-5 sm:text-8xl text-7xl md:text-[8rem] font-stat font-bold relative tracking-wide">
+                {Array.from("CATALYSIS").map((letter, index) => (
+                  <span key={index} className="relative inline-block mx-0.5">
+                    <span className="absolute md:top-[7px] top-[4px] right-[7px] text-black">
+                      {letter}
+                    </span>
+                    <span className="relative text-[#ff1f53]">{letter}</span>
                   </span>
+                ))}
+              </h1>
 
-                  <span className="relative text-[#ff1f53]">{letter}</span>
-                </span>
-              ))}
-            </h1>
+              {/* Adding V2.0 in a stylish way */}
+              <motion.span
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="absolute text-white text-sm sm:text-md md:text-2xl lg:text-2xl right-[-20px] sm:right-[-30px] md:right-[-40px] lg:right-[-40px] bottom-0 transform rotate-[-10deg] bg-[#2606AA] px-2 sm:px-3 py-1 rounded-xl shadow-md"
+              >
+                V3.0
+              </motion.span>
+            </div>
           </motion.div>
+
 
           <motion.p
             initial={{ scale: 0.5, opacity: 0 }}
@@ -125,7 +136,7 @@ export const Hero = () => {
           >
             The Ultimate Technical Showdown by Genesis Club
             <br />
-            <span className="text-[#4D21FF]">ISE Department</span>
+            <span className="text-[#2606AA]">ISE Department</span>
           </motion.p>
 
 

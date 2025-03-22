@@ -16,6 +16,8 @@ import { Login } from './components/Login';
 import { useState, useEffect } from 'react';
 import RegClosed from './components/RegClosed'
 import Footer from './components/Footer'
+import Brochure from './components/Brochure'
+import Rulebook from './components/Rulebook'
 
 const AdminRoute = () => {
   const { isAuthenticated } = useAuth();
@@ -63,8 +65,11 @@ function App() {
           
           </>
         } />
+
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<AdminRoute />} />
+        <Route path="/brochure" element={<Brochure />} />
+        <Route path="/Rulebook" element={<Rulebook />} />
       </Routes>
     </div>
   );

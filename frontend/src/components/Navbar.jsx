@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { scroller } from 'react-scroll';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Calendar, Menu, X, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
@@ -24,14 +24,15 @@ const Navbar = () => {
     { to: "about", label: "About" },
     { to: "events", label: "Events" },
     { to: "schedule", label: "Schedule" },
-    { to: "contact", label: "Contact" },
-    { to: "rulebook", label: "RuleBook", pdfPath: "/pdfs/RuleBook.pdf" },
+    { to: "faqs", label: "FAQs" }, // Ensure the section with id="faqs" exists in the target page
+    { to: "/brochure", label: "Brochure" }, 
+    {to: "/Rulebook", label: "Rulebook"}
   ];
 
   // Function to handle navigation and scrolling
-  const handleNavClick = (to, pdfPath) => {
-    if (pdfPath) {
-      window.open(pdfPath, '_blank');
+  const handleNavClick = (to) => {
+    if (to === "/brochure" || to === "/Rulebook") {
+      navigate(to); 
     } else if (isHome) {
       scroller.scrollTo(to, {
         smooth: true,
@@ -72,12 +73,12 @@ const Navbar = () => {
           </motion.div>
 
           {/* Centered Navigation Items */}
-          <div className="hidden md:flex font-comic items-center justify-center space-x-12 p-2 flex-1">
+          <div className="hidden md:flex font-comic items-center justify-center lg:space-x-8 md:space-x-3 p-1 flex-1">
             {navItems.map((item) => (
               <button
-                onClick={() => handleNavClick(item.to, item.pdfPath)}
+                onClick={() => handleNavClick(item.to)}
                 key={item.to}
-                className="text-[#2606AA] hover:text-[#ff1f53] text-lg relative group cursor-pointer"
+                className="text-[#2606AA] hover:text-[#ff1f53] lg:text-lg text-md relative group cursor-pointer"
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ff1f53] group-hover:w-full transition-all duration-300"></span>
