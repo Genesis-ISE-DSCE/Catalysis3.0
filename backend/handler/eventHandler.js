@@ -25,7 +25,10 @@ exports.registerForEvent = async (req, res) => {
 
     await newRegistration.save();
 
-    // Send confirmation email
+    // Respond to the client immediately
+    res.status(201).json({ message: 'Registration successful!', data: newRegistration });
+
+    // Send confirmation email asynchronously (after response is sent)
     const subject = 'Catalysis v3 Registration Confirmation';
 
     const text = `Hello ${name},
@@ -77,16 +80,11 @@ Team Genesis`;
       }
     ];
 
-    try {
-      // Pass attachments to the sendEmail function
-      await sendEmail(email, subject, text, html, attachments);
-      console.log('Email sent successfully with attachments');
-    } catch (emailError) {
-      console.error('Failed to send email:', emailError);
-      // Continue with the response even if email fails
-    }
-
-    res.status(201).json({ message: 'Registration successful!', data: newRegistration });
+    // Send email asynchronously (don't await)
+    sendEmail(email, subject, text, html, attachments)
+      .then(() => console.log('Email sent successfully with attachments'))
+      .catch(emailError => console.error('Failed to send email:', emailError));
+      
   } catch (error) {
     res.status(500).json({ error: 'Failed to register for the event', details: error.message });
   }
