@@ -120,7 +120,7 @@ export const Hero = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="absolute text-white text-md sm:text-lg md:text-2xl lg:text-2xl right-[-30px] sm:right-[-40px] md:right-[-40px] lg:right-[-40px] bottom-0 transform rotate-[-10deg] bg-[#2606AA] px-2 sm:px-3 py-1 rounded-xl shadow-md"
+                className="absolute text-white text-sm sm:text-md md:text-2xl lg:text-2xl right-[-20px] sm:right-[-30px] md:right-[-40px] lg:right-[-40px] bottom-0 transform rotate-[-10deg] bg-[#2606AA] px-2 sm:px-3 py-1 rounded-xl shadow-md"
               >
                 V3.0
               </motion.span>
