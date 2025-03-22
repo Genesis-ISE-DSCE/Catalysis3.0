@@ -67,12 +67,12 @@ Team Genesis`;
     // Fix attachment paths to use path.join for proper cross-platform compatibility
     const attachments = [
       {
-        filename: 'Code-of-conduct.pdf',
-        path: path.join(__dirname, 'Code of Conduct.pdf')
-      },
-      {
         filename: 'Rulebook.pdf',
         path: path.join(__dirname, 'RuleBook_final.pdf')
+      },
+      {
+        filename: 'Code-of-conduct.pdf',
+        path: path.join(__dirname, 'Code of Conduct.pdf')
       },
       {
         filename: 'Terms-and-conditions.pdf',
