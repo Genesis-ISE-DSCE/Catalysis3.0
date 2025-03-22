@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 const RegistrationSuccess = ({ name, events, onClose }) => {
   return (
-    <div className="fixed inset-0 backdrop-blur-md z-50 flex items-center justify-center flex-col">
+    <div className="fixed inset-0 backdrop-blur-md z-50 flex items-center justify-center">
       <motion.div
         initial={{ scale: 0.5, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5, type: "spring" }}
-        className="bg-white/90 p-8 rounded-xl shadow-2xl text-center max-w-md m-4 border-2 border-[#FF1F53]"
+        className="bg-white/90 p-8 rounded-xl shadow-2xl text-center max-w-md m-4 border-2 border-[#FF1F53] max-h-[60vh] lg:max-h-[90vh] overflow-y-auto"
       >
         <div className="mb-6 flex justify-center">
           {/* Success icon/animation */}
@@ -67,7 +67,7 @@ const RegistrationSuccess = ({ name, events, onClose }) => {
                 transition={{ duration: 0.3, delay: 0.9 + index * 0.1 }}
                 className="flex items-center font-comic text-[#2606AA] mb-2"
               >
-                <span className="mr-2">🎮</span> {event}
+                <span className="mr-2">🤖</span> {event}
               </motion.li>
             ))}
           </ul>
