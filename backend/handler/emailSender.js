@@ -20,7 +20,7 @@ const transporter = nodemailer.createTransport({
  * @param {string} html - Email body (HTML)
  * @param {Array} attachments - Email attachments (optional)
  */
-const sendEmail = async (to, subject, text, html) => {
+const sendEmail = async (to, subject, text, html, attachments = []) => {
   try {
     const mailOptions = {
       from: process.env.MAIL_USER,
@@ -28,7 +28,7 @@ const sendEmail = async (to, subject, text, html) => {
       subject,
       text, 
       html,
-      attachments,
+      attachments: attachments || [], // Ensure attachments is defined or use empty array
     };
 
     // Send the email
