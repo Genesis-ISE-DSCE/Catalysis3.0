@@ -32,8 +32,8 @@ export const Hero = () => {
   }, []);
 
   return (
-    <div className="h-screen flex items-center justify-center overflow-hidden py-24 px-0 font-comic ">
-      <div className=" z-10 container mx-auto mt-12">
+    <div className="min-h-screen flex items-center justify-center overflow-hidden py-24 px-0 font-comic ">
+      <div className=" z-10 container mx-auto">
         <div className="text-center">
           <motion.div
             initial={{ y: -50, opacity: 0 }}
