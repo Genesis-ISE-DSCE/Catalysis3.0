@@ -6,11 +6,11 @@ import { useNavigate } from 'react-router-dom';
 
 const initialEvents = {
   'DSA SmackDown': [],
-  'UI/UX Design (Team Event)': [],
+  'Code Red (Team Event)': [],
   'Technoseek (Team Event)': [],
   'Coding Relay (Team Event)': [],
   'TypeMaster': [],
-  'Valorant': []
+  'UI/UX Design': []
 };
 
 function CatalysisTitle() {

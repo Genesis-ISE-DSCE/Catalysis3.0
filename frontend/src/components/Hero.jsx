@@ -33,12 +33,12 @@ export const Hero = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center overflow-hidden py-24 px-0 font-comic ">
-      <div className=" z-10 container mx-auto">
+      <div className=" z-10 container mx-auto py-2">
         <div className="text-center">
           <motion.div
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="text-center p-3"
+            className="text-center p-2 md:p-4"
           >
             <p className="text-md md:text-xl font-bold text-white rounded-full bg-[#ffcc66] px-4 py-2 font-comic-neue inline-block">
               March 28-29, 2025

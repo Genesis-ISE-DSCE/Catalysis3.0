@@ -288,8 +288,8 @@ const Register = () => {
               "DSA SmackDown",
               "Technoseek (Team Event)",
               "TypeMaster",
-              "UI/UX Design (Team Event)",
-              "Valorant",
+              "Code Red (Team Event)",
+              "UI/UX Design",
             ].map((event) => (
               <label key={event} className="flex items-center">
                 <input
