@@ -25,14 +25,14 @@ const Navbar = () => {
     { to: "events", label: "Events" },
     { to: "schedule", label: "Schedule" },
     { to: "faqs", label: "FAQs" }, // Ensure the section with id="faqs" exists in the target page
-    { to: "/brochure", label: "Brochure" }, 
-    {to: "/Rulebook", label: "Rulebook"}
+    { to: null, label: "Brochure", pdfPath: "/pdfs/brochure.pdf" },
+    { to: null, label: "Rulebook", pdfPath: "/pdfs/Rulebook.pdf" }
   ];
 
   // Function to handle navigation and scrolling
-  const handleNavClick = (to) => {
-    if (to === "/brochure" || to === "/Rulebook") {
-      navigate(to); 
+  const handleNavClick = (to, pdfPath) => {
+    if (pdfPath) {
+      window.open(pdfPath, '_blank'); // Open the PDF in a new tab
     } else if (isHome) {
       scroller.scrollTo(to, {
         smooth: true,
@@ -76,8 +76,8 @@ const Navbar = () => {
           <div className="hidden md:flex font-comic items-center justify-center lg:space-x-8 md:space-x-3 p-1 flex-1">
             {navItems.map((item) => (
               <button
-                onClick={() => handleNavClick(item.to)}
-                key={item.to}
+                onClick={() => handleNavClick(item.to, item.pdfPath)}
+                key={item.to || item.label}
                 className="text-[#2606AA] hover:text-[#ff1f53] lg:text-lg text-md relative group cursor-pointer"
               >
                 {item.label}
@@ -116,9 +116,9 @@ const Navbar = () => {
               <div className="flex flex-col space-y-4 bg-white/90 backdrop-blur-sm rounded-xl p-4 border border-[#2606AA]/10">
                 {navItems.map((item) => (
                   <button
-                    key={item.to}
+                    key={item.to || item.label}
                     onClick={() => {
-                      handleNavClick(item.to);
+                      handleNavClick(item.to, item.pdfPath);
                       setIsMenuOpen(false);
                     }}
                     className="text-[#2606AA] hover:text-[#ff1f53] font-medium px-4 py-2 rounded-lg hover:bg-[#2606AA]/5 cursor-pointer"
