@@ -10,7 +10,7 @@ export const Schedule = () => {
       time: "11:30 AM-1:30 PM",
       event: "Coding Relay",
       date: "28/03/2022",
-      venue: "ISE Department",
+      venue: "ISE Dept",
       color: "red",
     },
     {
@@ -19,7 +19,7 @@ export const Schedule = () => {
       time: "11:00 AM-4:00 PM",
       event: "Code Red",
       date: "28/03/2022",
-      venue: "ISE Department",
+      venue: "ISE Dept",
       color: "purple",
     },
     {
@@ -28,16 +28,16 @@ export const Schedule = () => {
       time: "2:00 PM-4:00 PM",
       event: "DSA Smackdown",
       date: "28/03/2025",
-      venue: "ISE Department",
+      venue: "ISE Dept",
       color: "green",
     },
     {
       id: 4,
       srNo: "#4",
       time: "11:00 AM-3:00 PM",
-      event: "Typemaster",
+      event: "TypeMaster",
       date: "29/03/2025",
-      venue: "ISE Department",
+      venue: "ISE Dept",
       color: "red",
     },
     {
@@ -46,7 +46,7 @@ export const Schedule = () => {
       time: "10:00 PM-2:00 PM",
       event: "UI/UX design",
       date: "29/03/2025",
-      venue: "ISE Department",
+      venue: "ISE Dept",
       color: "purple",
     },
     {
@@ -55,7 +55,7 @@ export const Schedule = () => {
       time: "11:00 AM-3:00 PM",
       event: "Technoseek",
       date: "29/03/2025",
-      venue: "ISE Department",
+      venue: "ISE Dept",
       color: "green",
     },
     {
@@ -64,7 +64,7 @@ export const Schedule = () => {
       time: "10:00 AM-3:00 PM",
       event: "Code Red",
       date: "29/03/2025",
-      venue: "ISE Department",
+      venue: "ISE Dept",
       color: "purple",
     },
   ];
@@ -114,19 +114,16 @@ export const Schedule = () => {
         <table className="w-full border-collapse rounded-lg">
           <thead>
             <tr className="bg-[#ff1f53] text-white">
-              <th className="py-3 md:py-5 px-2 md:px-4 text-center font-comic text-sm md:text-lg w-[15%]">
-                SR NO.
-              </th>
-              <th className="py-3 md:py-5 px-2 md:px-4 text-center font-comic text-sm md:text-lg w-[20%]">
+              <th className="py-1 md:py-5 px-2 md:px-4 text-center font-comic text-sm md:text-lg w-[20%]">
                 TIME
               </th>
-              <th className="py-3 md:py-5 px-2 md:px-4 text-center font-comic text-sm md:text-lg w-[25%]">
+              <th className="py-1 md:py-5 px-2 md:px-4 text-center font-comic text-sm md:text-lg w-[25%]">
                 EVENT
               </th>
-              <th className="py-3 md:py-5 px-2 md:px-4 text-center font-comic text-sm md:text-lg w-[20%]">
+              <th className="py-1 md:py-5 px-2 md:px-4 text-center font-comic text-sm md:text-lg w-[20%]">
                 DATE
               </th>
-              <th className="py-3 md:py-5 px-2 md:px-4 text-center font-comic text-sm md:text-lg w-[20%]">
+              <th className="py-1 md:py-5 px-2 md:px-4 text-center font-comic text-sm md:text-lg w-[20%]">
                 VENUE
               </th>
             </tr>
@@ -138,22 +135,15 @@ export const Schedule = () => {
                 className="bg-[#fffbeb] border-b border-[#f9c74f] opacity-0 -translate-y-4 transition-all duration-300 ease-out hover:bg-[#fff8e0] transform hover:scale-[1.01]"
               >
                 <td
-                  className={`py-3 md:py-5 px-2 md:px-4 font-comic text-center text-sm md:text-base ${getTextColor(
-                    item.color
-                  )}`}
-                >
-                  {item.srNo}
-                </td>
-                <td
-                  className={`py-3 md:py-5 px-2 md:px-4 font-medium text-center text-sm md:text-base ${getTextColor(
+                  className={`py-1 md:py-5 px-2 md:px-4 font-medium text-center text-sm md:text-base ${getTextColor(
                     item.color
                   )}`}
                 >
                   {item.time}
                 </td>
-                <td className="py-3 md:py-5 px-2 md:px-4 text-center">
+                <td className="py-1 md:py-5 px-2 md:px-4 text-center">
                   <span
-                    className={`px-8 md:px-16 py-1 rounded-full ${getBgColor(
+                    className={`px-3 md:px-6 py-1 rounded-full ${getBgColor(
                       item.color
                     )} ${getTextColor(
                       item.color
@@ -163,14 +153,14 @@ export const Schedule = () => {
                   </span>
                 </td>
                 <td
-                  className={`py-3 md:py-5 px-2 md:px-4 font-medium text-center text-sm md:text-base ${getTextColor(
+                  className={`py-1 md:py-5 px-2 md:px-4 font-medium text-center text-sm md:text-base ${getTextColor(
                     item.color
                   )}`}
                 >
                   {item.date}
                 </td>
                 <td
-                  className={`py-3 md:py-5 px-2 md:px-4 font-medium text-center text-sm md:text-base ${getTextColor(
+                  className={`py-1 md:py-5 px-2 md:px-4 font-medium text-center text-sm md:text-base ${getTextColor(
                     item.color
                   )}`}
                 >
