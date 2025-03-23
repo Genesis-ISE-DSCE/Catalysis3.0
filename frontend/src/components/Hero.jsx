@@ -32,7 +32,7 @@ export const Hero = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex items-center justify-center overflow-hidden py-24 px-0 font-comic ">
+    <div className="min-h-screen flex items-center justify-center overflow-hidden md:py-24 py-12 px-0 font-comic ">
       <div className=" z-10 container mx-auto py-2">
         <div className="text-center">
           <motion.div

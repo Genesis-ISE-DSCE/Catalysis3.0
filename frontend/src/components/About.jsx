@@ -31,7 +31,7 @@ export const About = () => {
   ];
 
   return (
-    <div ref={ref} className="min-h-screen py-16 h-auto relative overflow-hidden" id="about">
+    <div ref={ref} className="min-h-screen py-12 h-auto relative overflow-hidden" id="about">
       <img
         src="/images/books.svg"
         alt="Books"

@@ -106,7 +106,7 @@ export const Schedule = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center animate-fadeIn" id="schedule">
+    <div className="max-h-screen flex flex-col mb-8 items-center animate-fadeIn" id="schedule">
       <h1 className="text-white text-6xl font-comic mb-4 md:mb-4 tracking-wide animate-bounce-slow">
         SCHEDULE
       </h1>
