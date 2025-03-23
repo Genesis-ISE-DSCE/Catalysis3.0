@@ -38,9 +38,9 @@ export const Hero = () => {
           <motion.div
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="text-center mb-4"
+            className="text-center p-3"
           >
-            <p className="text-md md:text-2xl font-bold text-white rounded-full bg-[#ffcc66] px-6 py-2 font-comic-neue inline-block">
+            <p className="text-md md:text-xl font-bold text-white rounded-full bg-[#ffcc66] px-4 py-2 font-comic-neue inline-block">
               March 28-29, 2025
             </p>
           </motion.div>
@@ -140,7 +140,7 @@ export const Hero = () => {
           </motion.p>
 
 
-          <div className="mb-20 flex flex-wrap space-x-4 justify-center text-white text-2xl sm:text-3xl">
+          <div className="mb-14 flex flex-wrap space-x-4 justify-center text-white text-2xl sm:text-3xl">
             {Object.entries(timeLeft).map(([unit, value]) => (
               <div key={unit} className="flex flex-col items-center mb-4">
                 <motion.div
