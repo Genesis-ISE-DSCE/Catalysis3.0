@@ -41,9 +41,9 @@ Thank you for joining us! Stay tuned to our Instagram page (@genesis.ise) for fu
 
 For any queries, feel free to contact us via this email, our Instagram page or visit the registration desks.
 
-Please check the attached PDFs for rulebook and code of conduct.
+Please check the attached PDFs for Rulebook, Code of Conduct and Terms and Conditions.
 
-Looking forward to an amazing event with you!
+Looking forward to an amazing event with you! :)
 
 Team Genesis`;
 

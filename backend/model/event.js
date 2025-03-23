@@ -6,8 +6,8 @@ const events = [
   "DSA SmackDown",
   "Technoseek (Team Event)",
   "TypeMaster",
-  "UI/UX Design (Team Event)",
-  "Valorant",
+  "Code Red (Team Event)",
+  "UI/UX Design",
 ];
 
 const engineering_departments = [
