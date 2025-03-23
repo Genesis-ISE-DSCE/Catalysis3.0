@@ -38,7 +38,7 @@ export const Hero = () => {
           <motion.div
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="text-center p-2 md:p-4"
+            className="text-center md:p-4"
           >
             <p className="text-md md:text-xl font-bold text-white rounded-full bg-[#ffcc66] px-4 py-2 font-comic-neue inline-block">
               March 28-29, 2025
