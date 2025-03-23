@@ -25,7 +25,7 @@ const EventCard = ({
 }) => {
   return (
     <div
-      className="relative border-4 border-black bg-white p-8 rounded-2xl border-r-8 border-b-8 transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 ease-out"
+      className="relative border-4 border-black bg-white p-8 rounded-2xl border-r-8 border-b-8 mb-8 transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 ease-out"
       data-aos="fade-up"
       data-aos-delay={delay}
     >
@@ -164,23 +164,20 @@ export function Events() {
         EPIC EVENTS
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
+      {/* Grid Container */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {events.map((event, index) => (
-          <div
+          <EventCard
             key={index}
-            className="transition-all duration-300 ease-out row-span-1"
-          >
-            <EventCard
-              title={event.title}
-              description={event.description}
-              date={event.date}
-              time={event.time}
-              icon={event.icon}
-              delay={event.delay}
-              pdfLink={event.pdfLink}
-              onClick={() => handleEventClick(event.pdfLink)}
-            />
-          </div>
+            title={event.title}
+            description={event.description}
+            date={event.date}
+            time={event.time}
+            icon={event.icon}
+            delay={event.delay}
+            pdfLink={event.pdfLink}
+            onClick={() => handleEventClick(event.pdfLink)}
+          />
         ))}
       </div>
     </div>

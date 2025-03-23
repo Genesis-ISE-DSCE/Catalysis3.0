@@ -74,7 +74,7 @@ const Contact = () => {
           />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 grid-cols-1 gap-16 mt-42 max-w-8xl mx-auto">
+        <div className="grid lg:grid-cols-2 grid-cols-1 gap-16 md:mt-42 mt-12 max-w-8xl mx-auto">
           
           <motion.div
             className="w-full lg:w-[90%] lg:mt-0 mt-8 relative z-0 hidden lg:block"
