@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 const RegistrationSuccess = ({ name, events, onClose }) => {
   return (
-    <div className="fixed inset-0 backdrop-blur-md z-50 flex items-center justify-center">
+    <div className="fixed inset-0 backdrop-blur-md z-50 mt-12 flex items-center justify-center">
       <motion.div
         initial={{ scale: 0.5, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5, type: "spring" }}
-        className="bg-white/90 p-8 rounded-xl shadow-2xl text-center max-w-md m-4 border-2 border-[#FF1F53] max-h-[60vh] lg:max-h-[90vh] overflow-y-auto"
+        className="bg-white/90 p-8 rounded-xl shadow-2xl text-center max-w-md m-4 border-2 border-[#FF1F53] max-h-[60vh] lg:max-h-[80vh] overflow-y-auto"
       >
         <div className="mb-6 flex justify-center">
           {/* Success icon/animation */}
@@ -16,7 +16,7 @@ const RegistrationSuccess = ({ name, events, onClose }) => {
             initial={{ scale: 0 }}
             animate={{ scale: [0, 1.2, 1] }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center"
+            className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center"
           >
             <motion.svg
               xmlns="http://www.w3.org/2000/svg"
@@ -54,11 +54,11 @@ const RegistrationSuccess = ({ name, events, onClose }) => {
         >
           <p className="text-xl font-comic mb-2">
             Thanks, <span className="font-bold">{name}</span>!
-          <p className="text-gray-600 mb-4">
+          <p className="text-gray-600">
             You&apos;ve successfully registered for:
           </p>
           </p>
-          <ul className="bg-gray-50 rounded-lg p-4 mb-6 text-left">
+          <ul className="bg-gray-50 rounded-lg p-4 text-left">
             {events.map((event, index) => (
               <motion.li
                 key={index}

@@ -125,7 +125,7 @@ const Register = () => {
   // Comic-style loading animation component with blur background
   const ComicLoadingAnimation = () => (
     <div className="fixed inset-0 backdrop-blur-md z-50 flex items-center justify-center flex-col">
-      <div className="bg-white/90 p-8 rounded-xl shadow-2xl text-center max-w-md border-2 border-[#FF1F53]">
+      <div className="bg-white/90 p-4 md:p-8 rounded-xl shadow-2xl text-center max-w-xs md:max-w-md border-2 border-[#FF1F53]">
         <div className="mb-6 relative">
           {/* Comic-style burst */}
           <motion.div 
@@ -143,7 +143,7 @@ const Register = () => {
           
           <div className="relative">            
             <motion.div 
-              className="text-6xl font-comic font-bold text-[#2606AA] z-10 relative"
+              className="text-4xl md:text-6xl font-comic font-bold text-[#2606AA] z-10 relative"
               animate={{ scale: [1, 1.1, 1] }}
               transition={{ 
                 duration: 1,
@@ -156,7 +156,7 @@ const Register = () => {
           </div>
         </div>
         
-        <h3 className="text-2xl font-comic text-[#FF1F53] font-bold mb-3">
+        <h3 className="text-xl md:text-2xl font-comic text-[#FF1F53] font-bold mb-3">
           Registering you for Catalysis v3...
         </h3>
         
@@ -164,7 +164,7 @@ const Register = () => {
           {[...Array(3)].map((_, i) => (
             <motion.div
               key={i}
-              className="w-4 h-4 rounded-full bg-[#FF1F53]"
+              className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#FF1F53]"
               animate={{ 
                 y: ["0%", "-100%", "0%"],
                 scale: [1, 1.2, 1]
@@ -179,7 +179,7 @@ const Register = () => {
           ))}
         </div>
         
-        <p className="text-gray-600 mt-2 font-comic">
+        <p className="text-sm md:text-base text-gray-600 mt-2 font-comic">
           Your superhero registration is being processed and a personalised mail is being sent to you!
         </p>
       </div>
