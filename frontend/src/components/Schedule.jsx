@@ -82,7 +82,13 @@ export const Schedule = () => {
   const getTextColor = (color) => {
     switch (color) {
       case "red":
-        return "text-[#e94a64]";
+        return "text-[#6b5de9]";
+      case "purple":
+        return "text-[#6b5de9]";
+      case "green":
+        return "text-[#6b5de9]";
+      default:
+        return "text-[#6b5de9]";
     }
   };
 
@@ -91,9 +97,9 @@ export const Schedule = () => {
       case "red":
         return "bg-[#ffe8ec]";
       case "purple":
-        return "bg-[#eeeaff]";
+        return "bg-[#ffe8ec]";
       case "green":
-        return "bg-[#e8fff0]";
+        return "bg-[#ffe8ec]";
       default:
         return "bg-[#ffe8ec]";
     }
