@@ -61,7 +61,7 @@ const Navbar = () => {
         boxShadow: scrolled ? '0 2px 4px rgba(0,0,0,0.1)' : 'none'
       }}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto overflow-x-none px-4">
         <div className="flex items-center justify-between h-12">
           <motion.div
             className="flex items-center space-x-2 w-1/4 cursor-pointer"
@@ -99,7 +99,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-[#2606AA] p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button className="md:hidden overflow-x-none text-[#2606AA] p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
