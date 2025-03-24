@@ -11,17 +11,17 @@
   }
 
   .font-comic {
-    font-family: "Bangers", cursive;
+    font-family: "Bangers", sans-serif;
     letter-spacing: 2px;
-  }
+}
 
-  .font-comic-neue {
-    font-family: "Comic Neue", cursive;
+.font-comic-neue {
+    font-family: "Comic Neue", sans-serif;
     font-weight: 400;
-  }
+}
 
-  .font-stat{
-    font-family: 'Staatliches', cursive;
+.font-stat {
+    font-family: "Staatliches", sans-serif;
+}
 
-  }
 }
