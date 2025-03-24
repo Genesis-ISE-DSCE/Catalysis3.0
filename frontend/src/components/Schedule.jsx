@@ -143,15 +143,16 @@ export const Schedule = () => {
                 </td>
                 <td className="py-2 md:py-5 px-2 md:px-4 text-center">
                   <span
-                    className={`px-3 md:px-6 py-2 rounded-full ${getBgColor(
+                    className={`px-3 md:px-6 py-2 rounded-full w-[100px] md:w-[150px] inline-block text-center ${getBgColor(
                       item.color
                     )} ${getTextColor(
                       item.color
-                    )} hover:shadow-md transition-all duration-300 inline-block hover:scale-105 text-sm md:text-base`}
+                    )} hover:shadow-md transition-all duration-300 hover:scale-105 text-sm md:text-base`}
                   >
                     {item.event}
                   </span>
                 </td>
+
                 <td
                   className={`py-2 md:py-5 px-2 md:px-4 font-medium text-center text-sm md:text-base ${getTextColor(
                     item.color
