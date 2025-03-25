@@ -1,7 +1,7 @@
 const express = require('express');
 const contactHandler = require('../handler/contact');
 const eventHandler = require('../handler/eventHandler');
-const {limiter} = require('../config/limiter')
+const limiter = require('../config/limiter')
 
 const router = express.Router();
 
