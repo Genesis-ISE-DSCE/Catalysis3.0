@@ -34,6 +34,11 @@ const Contact = () => {
           body: JSON.stringify(formData),
         });
   
+        if (!formData.name || !formData.email || !formData.message) {
+          toast.error('All fields are mandatory!');
+          return;
+        }
+
         if (response.ok) {
           toast.success('Message sent successfully!'); // Use toast for success
           setFormData({
