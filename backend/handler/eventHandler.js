@@ -6,18 +6,28 @@ exports.registerForEvent = async (req, res) => {
   try {
     const { name, usn, phone, email, semester, branch, event } = req.body;
 
-    // Check if the user is already registered for the event
-    const existingRegistration = await Registration.findOne({ email, event });
+    // Normalize data
+    const normalizedUSN = usn.toUpperCase().trim();
+    const normalizedEmail = email.toLowerCase().trim();
+
+    // Check for existing registration with the same USN or email
+    const existingRegistration = await Registration.findOne({
+      $or: [{ usn: normalizedUSN }, { email: normalizedEmail }]
+    });
+
     if (existingRegistration) {
-      return res.status(400).json({ error: 'You are already registered for this event.' });
+      const duplicateField = existingRegistration.usn === normalizedUSN ? 'USN' : 'Email';
+      return res.status(400).json({ 
+        error: `${duplicateField} is already registered. Please use a different ${duplicateField.toLowerCase()}.` 
+      });
     }
 
-    // Create a new registration
+    // Create a new registration with normalized values
     const newRegistration = new Registration({
-      name,
-      usn,
-      phone,
-      email,
+      name: name.trim(),
+      usn: normalizedUSN,
+      phone: phone.trim(),
+      email: normalizedEmail,
       semester,
       branch,
       event,
@@ -28,7 +38,7 @@ exports.registerForEvent = async (req, res) => {
     // Respond to the client immediately
     res.status(201).json({ message: 'Registration successful!', data: newRegistration });
 
-    // Send confirmation email asynchronously (after response is sent)
+    // Send confirmation email (rest of the code remains the same)
     const subject = 'Catalysis v3 Registration Confirmation';
 
     const text = `Hello ${name},
@@ -64,7 +74,7 @@ Team Genesis`;
 
   <p><strong>Team Genesis</strong></p>
 `;
-    // Fix attachment paths to use path.join for proper cross-platform compatibility
+
     const attachments = [
       {
         filename: 'Rulebook.pdf',
@@ -81,12 +91,22 @@ Team Genesis`;
     ];
 
     // Send email asynchronously (don't await)
-    sendEmail(email, subject, text, html, attachments)
+    sendEmail(normalizedEmail, subject, text, html, attachments)
       .then(() => console.log('Email sent successfully with attachments'))
       .catch(emailError => console.error('Failed to send email:', emailError));
       
   } catch (error) {
-    res.status(500).json({ error: 'Failed to register for the event', details: error.message });
+    // Handle unique constraint violations
+    if (error.code === 11000) {
+      const duplicateField = error.message.includes('email') ? 'Email' : 'USN';
+      return res.status(400).json({ 
+        error: `${duplicateField} is already registered. Please use a different ${duplicateField.toLowerCase()}.` 
+      });
+    }
+    res.status(500).json({ 
+      error: 'Failed to register for the event', 
+      details: error.message 
+    });
   }
 };
 
