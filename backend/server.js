@@ -8,7 +8,7 @@ const authRoutes = require('./routes/auth');
 const app = express();
 const PORT = process.env.PORT || 9000;
 
-app.set("trust proxy", 1);
+// app.set("trust proxy", 1);
 // Middleware
 app.use(bodyParser.json());
 app.use(cors());
