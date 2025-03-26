@@ -50,7 +50,7 @@ const eventSchema = new mongoose.Schema(
       required: true,
       uppercase: true,
       trim: true,
-      unique: true, // Make USN globally unique
+      unique: true,
     },
     phone: {
       type: String,
@@ -62,7 +62,7 @@ const eventSchema = new mongoose.Schema(
       required: true,
       lowercase: true,
       trim: true,
-      unique: true, // Make email globally unique
+      unique: true,
     },
     semester: {
       type: Number,
@@ -78,6 +78,12 @@ const eventSchema = new mongoose.Schema(
       type: [String],
       enum: events,
       required: true,
+      validate: {
+        validator: function(v) {
+          return v.length > 0; // Ensure at least one event is selected
+        },
+        message: 'At least one event must be selected'
+      }
     },
   },
   {
