@@ -6,6 +6,13 @@ exports.registerForEvent = async (req, res) => {
   try {
     const { name, usn, phone, email, semester, branch, event } = req.body;
 
+    // Validate that event array is not empty
+    if (!event || !Array.isArray(event) || event.length === 0) {
+      return res.status(400).json({ 
+        error: 'At least one event must be selected' 
+      });
+    }
+
     // Normalize data
     const normalizedUSN = usn.toUpperCase().trim();
     const normalizedEmail = email.toLowerCase().trim();
@@ -45,7 +52,7 @@ exports.registerForEvent = async (req, res) => {
 
 You have successfully registered for Catalysis v3!
 
-Your registered events: ${event}.
+Your registered events: ${event.join(', ')}.
 
 Thank you for joining us! Stay tuned to our Instagram page (@genesis.ise) for further updates and announcements. The event WhatsApp group link will be shared once registration closes.
 
@@ -62,7 +69,7 @@ Team Genesis`;
 
   <p>You have successfully registered for <strong>Catalysis v3!</strong></p>
 
-  <p><strong>Your registered events:</strong> ${event}.</p>
+  <p><strong>Your registered events:</strong> ${event.join(', ')}.</p>
 
   <p>Thank you for joining us! We're excited about your enthusiastic participation. Please stay tuned to our Instagram page <a href="https://www.instagram.com/genesis.ise">@genesis.ise</a> for updates and important announcements. The event WhatsApp group link will be shared once registration closes.</p>
 
@@ -101,6 +108,12 @@ Team Genesis`;
       const duplicateField = error.message.includes('email') ? 'Email' : 'USN';
       return res.status(400).json({ 
         error: `${duplicateField} is already registered. Please use a different ${duplicateField.toLowerCase()}.` 
+      });
+    }
+    // Handle validation errors (including empty event array)
+    if (error.name === 'ValidationError') {
+      return res.status(400).json({ 
+        error: error.message 
       });
     }
     res.status(500).json({ 
