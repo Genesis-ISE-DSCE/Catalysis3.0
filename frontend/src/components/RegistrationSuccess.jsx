@@ -54,10 +54,11 @@ const RegistrationSuccess = ({ name, events, onClose }) => {
         >
           <p className="text-xl font-comic mb-2">
             Thanks, <span className="font-bold">{name}</span>!
-          <p className="text-gray-600">
+          </p>
+          <div className="text-gray-600">
             You&apos;ve successfully registered for:
-          </p>
-          </p>
+          </div>
+
           <ul className="bg-gray-50 rounded-lg p-4 text-left">
             {events.map((event, index) => (
               <motion.li
