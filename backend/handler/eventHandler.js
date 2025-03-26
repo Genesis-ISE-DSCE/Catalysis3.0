@@ -6,7 +6,7 @@ exports.registerForEvent = async (req, res) => {
   try {
     const { name, usn, phone, email, semester, branch, event } = req.body;
 
-    // Validate that event array is not empty
+    // Validate that event's array should not empty
     if (!event || !Array.isArray(event) || event.length === 0) {
       return res.status(400).json({ 
         error: 'At least one event must be selected' 
@@ -110,7 +110,7 @@ Team Genesis`;
         error: `${duplicateField} is already registered. Please use a different ${duplicateField.toLowerCase()}.` 
       });
     }
-    // Handle validation errors (including empty event array)
+    // Handle validation errors
     if (error.name === 'ValidationError') {
       return res.status(400).json({ 
         error: error.message 
