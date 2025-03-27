@@ -43,7 +43,7 @@ export const Schedule = () => {
     {
       id: 5,
       srNo: "#5",
-      time: "10:00 PM-2:00 PM",
+      time: "10:00 AM-2:00 PM",
       event: "UI/UX design",
       date: "29th March'25",
       venue: "ISE Dept",
