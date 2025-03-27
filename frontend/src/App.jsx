@@ -9,7 +9,7 @@ import { Contact } from './components/Contact'
 import { Admin } from './components/Admin'
 import '@fontsource/bangers';
 import { Route,BrowserRouter as Router,Routes, Navigate } from 'react-router-dom'
-import { Register } from './components/Register'
+// import { Register } from './components/Register'
 import Navbar from './components/Navbar'
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { Login } from './components/Login';
@@ -61,7 +61,7 @@ function App() {
         <Route path="/register" element={
           <>
             <Navbar />
-            <Register />
+            <RegClosed />
           
           </>
         } />
