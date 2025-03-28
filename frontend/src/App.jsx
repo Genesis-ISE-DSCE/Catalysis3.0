@@ -1,3 +1,4 @@
+
 import './App.css'
 import { Hero } from './components/Hero'
 import { Schedule } from './components/Schedule'
@@ -18,6 +19,7 @@ import RegClosed from './components/RegClosed'
 import Footer from './components/Footer'
 import Brochure from './components/Brochure'
 import Rulebook from './components/Rulebook'
+import Clue from './components/Clue'
 
 const AdminRoute = () => {
   const { isAuthenticated } = useAuth();
@@ -43,6 +45,7 @@ const AdminRoute = () => {
 
 function App() {
   return (
+    <>
     <div className='bg-[#FFC247]'>
       <Routes>
         <Route path="/" element={
@@ -70,8 +73,16 @@ function App() {
         <Route path="/admin" element={<AdminRoute />} />
         <Route path="/brochure" element={<Brochure />} />
         <Route path="/Rulebook" element={<Rulebook />} />
+        
       </Routes>
+
     </div>
+    
+    <Routes>
+    <Route path="/Clue" element={<Clue />} />
+  </Routes>
+  </>
+    
   );
 }
 
